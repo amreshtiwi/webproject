@@ -214,3 +214,18 @@ body{
 .footer-bottom span{
     font-family: 'Turret Road', cursive;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #2e2e2e;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #bc8500;
+    border-radius: 10px;
+}
