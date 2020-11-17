@@ -14,13 +14,7 @@ body{
     overflow: hidden;
     background-blend-mode: multiply ;
 }
-/*.wave{
-    position: absolute;
-    width: 100%;
-    bottom: -115px;
-    color: #bcbcbc;
-    opacity: 1;
-}*/
+/*two btn in index*/
 .log-sign{
     max-width: 55%;
     margin-top: 35px;
@@ -30,17 +24,28 @@ body{
     display: inline-block;
     padding: 15px 45px;
     text-decoration: none;
-    color: #bcbcbc;
+
     border-radius: 50px;
     margin-left: 10px;
 }
 .log-sign a.log{
     background-color: #bc8500;
+    color: #2e2e2e ;
 }
 .log-sign a.sign{
     border: 2px solid #bc8500;
+    color: #bcbcbc;
 }
 
+.log-sign a.log:hover{
+    color: #bcbcbc;
+}
+
+.log-sign a.sign:hover{
+    color: #bc8500;
+}
+/*end 2 btn*/
+/*paragraph in index*/
 .describe{
     position: absolute;
     margin-top: 150px;
@@ -60,8 +65,8 @@ body{
     color: #bc8500;
     font-family: 'Lalezar', cursive;
 }
-
-
+/*end para*/
+/*cards in index*/
 .cards{
     margin-top: 350px;
     margin-left: 100px;
@@ -120,6 +125,8 @@ body{
     color: #2e2e2e;
     font-size: 24px;
 }
+/*end cards*/
+/*footer in insex*/
 .footer{
     background: #bcbcbc;
     color: #2e2e2e;
@@ -214,7 +221,9 @@ body{
 .footer-bottom span{
     font-family: 'Turret Road', cursive;
 }
-/*desiegn bar*/
+/*end footer*/
+
+/*desiegn scrollbar*/
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -230,7 +239,7 @@ body{
     background: #bc8500;
     border-radius: 10px;
 }
-/*end desigen bar*/
+/*end desigen scrollbar*/
 
 /* this desigen for login*/
 
@@ -355,7 +364,7 @@ form{
     transition: .3s;
 }
 
-a:hover{
+.login-content a:hover{
     color: #bc8500;
 }
 
