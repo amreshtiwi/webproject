@@ -16,9 +16,10 @@ body{
 }
 /*two btn in index*/
 .log-sign{
-    max-width: 55%;
+    width: 100%;
     margin-top: 35px;
-    margin-left: 1150px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 .log-sign a{
     display: inline-block;
@@ -49,7 +50,8 @@ body{
 .describe{
     position: absolute;
     margin-top: 150px;
-    margin-left: 1050px;
+    right: 0;
+    margin-right: 10px;
 }
 
 .describe h1{
