@@ -388,4 +388,37 @@ form{
 .btn:hover{
     background-position: right;
 }
+
+.welcome{
+    position: absolute !important;
+    right: 50% !important;
+    top: 60% !important;
+    margin-left: 0 !important;
+    margin-top:0 !important;
+}
+.welcome h1{
+    margin-right: 90px !important;
+    line-height: 70px !important;
+}
+/*
+.describe{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 1050px;
+}
+
+.describe h1{
+    font-size: 48px;
+    color: #bc8500;
+    font-family: 'Lalezar', cursive;
+    line-height:40px;
+}
+.describe p{
+    font-size: 24px;
+    text-align: center;
+    margin-left: 50px;
+    color: #bc8500;
+    font-family: 'Lalezar', cursive;
+}
+*/
 /*end desgen for login*/

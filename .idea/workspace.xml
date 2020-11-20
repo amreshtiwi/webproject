@@ -22,6 +22,7 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="3282a5c0-c38b-4e10-a50e-31e620617698" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kH458XGr4u0jFVFCmOVwLDXdTW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -32,18 +33,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webproject" />
+    <property name="last_opened_file_path" value="C:/xampp/php/php.exe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/project0/index.html" useBuiltInWebServerPort="true">
+    <configuration name="pp1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/project0/pp1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.pp1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -65,6 +66,11 @@
       <workItem from="1605391289748" duration="1528000" />
       <workItem from="1605459403149" duration="16534000" />
       <workItem from="1605603669945" duration="1840000" />
+      <workItem from="1605701844004" duration="1121000" />
+      <workItem from="1605729638686" duration="155000" />
+      <workItem from="1605730614290" duration="738000" />
+      <workItem from="1605776505649" duration="13730000" />
+      <workItem from="1605811802391" duration="2237000" />
     </task>
     <servers />
   </component>
@@ -77,10 +83,22 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1605388343793">
+    <state x="349" y="67" key="#CLI_Interpreters" timestamp="1605813980734">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605388343793" />
+    <state x="349" y="67" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1605813980734" />
+    <state x="475" y="55" key="#PHP" timestamp="1605813986253">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="475" y="55" key="#PHP/0.0.1536.824@0.0.1536.824" timestamp="1605813986253" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605786963572">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1605786963572" />
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1605813953275">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605813953275" />
     <state x="647" y="310" key="Github.ShareDialog" timestamp="1605388029061">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -149,9 +167,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1605386804161" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1605813670218">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1605813670218" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1605388130704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605388130704" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1605782730534">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1605782730534" />
   </component>
 </project>
