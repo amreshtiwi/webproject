@@ -45,6 +45,35 @@ body{
 .log-sign a.sign:hover{
     color: #bc8500;
 }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    margin-left: 20px;
+    display: none;
+    position: absolute;
+    background-color: #e9e9e9;
+    min-width: 140px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #2e2e2e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #e1e1e1;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .sign {background-color: #3e3e3e;}
 /*end 2 btn*/
 /*paragraph in index*/
 .describe{
@@ -246,8 +275,13 @@ body{
 /* this desigen for login*/
 
 .login-content{
+    background-color: #8b8b8b;
+    padding: 50px 40px 50px 10px;
+    max-width: 450px;
+    max-height: 700px;
+    border-radius: 50px;
     margin-top: 200px;
-    margin-right: 150px;
+    margin-right: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -270,7 +304,7 @@ form{
     grid-template-columns: 7% 93%;
     margin: 25px 0;
     padding: 5px 0;
-    border-bottom: 2px solid #bcbcbc;
+    border-bottom: 2px solid #2e2e2e;
 }
 
 .login-content .input-div.one{
@@ -278,7 +312,7 @@ form{
 }
 
 .i{
-    color: #bcbcbc;
+    color: #2e2e2e ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -299,7 +333,7 @@ form{
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999;
+    color: #2e2e2e;
     font-size: 18px;
     font-family: 'Lalezar', cursive;
     transition: .3s;
@@ -402,6 +436,37 @@ form{
     margin-right: 90px !important;
     line-height: 70px !important;
 }
+.exit{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bcbcbc;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #2e2e2e;
+    margin: 20px;
+}
+
+.exit span{
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+.exit span:hover{
+    animation-name: exit ;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes exit {
+    20%,80%{
+        transform: rotate(360deg);
+    }
+}
 /*
 .describe{
     position: absolute;
@@ -424,3 +489,12 @@ form{
 }
 */
 /*end desgen for login*/
+/*
+here
+*/
+/* The container <div> - needed to position the dropdown content */
+/*.dropdown {
+    position: relative;
+    display: inline-block;
+}*/
+
