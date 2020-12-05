@@ -363,7 +363,7 @@ form{
 }
 
 .input-div.focus > div > h5{
-    top: -5px;
+    top: 5px;
     font-size: 15px;
 }
 
@@ -382,7 +382,7 @@ form{
     background: none;
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
-    color: #555;
+    color: #2e2e2e;
     font-family: 'poppins', sans-serif;
 }
 
@@ -395,7 +395,7 @@ form{
     display: block;
     text-align: right;
     text-decoration: none;
-    color: #8b8b8b;
+    color: #2e2e2e;
     font-size: 0.9rem;
     transition: .3s;
 }
@@ -467,6 +467,13 @@ form{
         transform: rotate(360deg);
     }
 }
+.flname {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "fname lname" ;
+}
+.one{grid-area: fname;}
+.two{grid-area: lname;}
 /*
 .describe{
     position: absolute;

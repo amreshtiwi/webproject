@@ -19,3 +19,10 @@ inputs.forEach(input => {
     input.addEventListener("blur", remcl);
 });
 
+// function myFunction() {
+//     let parent = this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+//     if(this.value == ""){
+//         parent.classList.remove("focus");
+//     }
+// }
+
