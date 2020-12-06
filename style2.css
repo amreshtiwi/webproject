@@ -40,7 +40,7 @@ form{
 }
 
 
-.login-content .input-div{
+ .input-div{
     position: relative;
     display: grid;
     grid-template-columns: 7% 93%;
@@ -50,7 +50,7 @@ form{
     margin-right: 5px;
 }
 
-.login-content .input-div.one{
+ .input-div.one{
     margin-top: 0;
 }
 
@@ -135,18 +135,20 @@ form{
 }
 
 .login-content a{
+    position: relative;
     font-family: 'Lalezar', cursive;
     display: block;
-    text-align: right;
+    text-align: center;
+    padding-top: 10px;
     text-decoration: none;
     color: #2e2e2e;
-    font-size: 0.9rem;
-    transition: .3s;
+    /*font-size: 0.9rem;*/
+    /*transition: .3s;*/
 }
 
-.login-content a:hover{
-    color: #bc8500;
-}
+/*.login-content a:hover{*/
+/*    color: #bc8500;*/
+/*}*/
 
 .btn{
     display: block;
@@ -227,6 +229,17 @@ form{
     top: -7px;
 }
 
+.three{
+    grid-area: totime;
+    align-self: center;
+    top: -7px;
+}
+
+.timefromto{
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-areas: "fname lname totime" ;
+}
 /*.one > div > h5{*/
 /*    margin-right: 0 !important;*/
 /*    !*padding-right: -20px !important;*!*/
@@ -290,3 +303,28 @@ form{
     border-radius: 10px;
 }
 /*end desigen scrollbar*/
+
+.login-content1{
+    position: relative;
+    background-color: #8b8b8b;
+    padding: 30px 40px 50px 10px;
+    max-width: 500px;
+    /*max-height: 700px;*/
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 33%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}

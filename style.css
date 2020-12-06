@@ -16,7 +16,8 @@ body{
 }
 /*two btn in index*/
 .log-sign{
-    width: 100%;
+    margin-right: 20px;
+    /*width: 100%;*/
     margin-top: 35px;
     display: flex;
     flex-direction: row-reverse;

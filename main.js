@@ -19,6 +19,14 @@ inputs.forEach(input => {
     input.addEventListener("blur", remcl);
 });
 
+function goback(){
+    window.history.back();
+}
+
+function salonsignupfunc(){
+    document.getElementById("login-content").style.display="none";
+    document.getElementById("login-content1").style.display="flex";
+}
 // function myFunction() {
 //     let parent = this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 //     if(this.value == ""){
@@ -26,3 +34,11 @@ inputs.forEach(input => {
 //     }
 // }
 
+// function focusfunc(){
+//     document.querySelector(".input-div.focus:before").style.width="50%";
+//     document.querySelector(".input-div.focus:after").style.width="50%";
+//     document.querySelector(".input-div.focus > div > h5").style.top="5px";
+//     document.querySelector(".input-div.focus > div > h5").style.fontsize="5px";
+//     document.querySelector(".input-div.focus > .i > i").style.color="#bc8500";
+//
+// }
