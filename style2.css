@@ -322,6 +322,7 @@ form{
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
+    font-size: 4px;
     background: none;
 }
 
