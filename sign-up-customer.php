@@ -1,5 +1,4 @@
 <?php
-
 $Fname = $LName = $email = $gender = $birthday = $PhoneNum = $Pass1 = $Pass2 = $errorMSG = "";
 $showError = "none";
 if (!empty($_POST)) {
@@ -21,7 +20,7 @@ if (!empty($_POST)) {
             $errorMSG = "كلمة المرور غير متطابقه";
             $showError = "block";
             echo '<script type="text/javascript" src="main3.js"></script>';
-        } else if ($birthday > $now) {
+        } else if ($date > $now) {
             $errorMSG = "خطأ في تاريخ الميلاد";
             $showError = "block";
             echo '<script type="text/javascript" src="main3.js"></script>';
@@ -99,6 +98,8 @@ function test_input($data)
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
+    $data = htmlentities($data);
+
     return $data;
 }
 
@@ -191,7 +192,7 @@ function test_input($data)
                 <div>
                     <h5>تاريخ الميلاد</h5>
                     <input class="input" type="date" name="birthday" id="birthday" required
-                           value="<?php echo $birthday; ?>">
+                           value="<?php echo $birthday; ?>" min="1900-01-01" max=" <?php echo date("Y-m-d")?>">
                 </div>
             </div>
 
