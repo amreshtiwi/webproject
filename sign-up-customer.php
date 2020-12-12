@@ -18,13 +18,19 @@ if (!empty($_POST)) {
         $now = new DateTime();
 
         if ($Pass1 != $Pass2) {
-            $errorMSG = "Passwords do not match!";
+            $errorMSG = "كلمة المرور غير متطابقه";
             $showError = "block";
+            echo '<script type="text/javascript" src="main3.js"></script>';
         } else if ($birthday < $now) {
-            echo '<script>alert("Invalid Date")</script>';
+            $errorMSG = "خطأ في تاريخ الميلاد";
+            $showError = "block";
+            echo '<script type="text/javascript" src="main3.js"></script>';
         }
     } else {
-        echo '<script>alert("Please enter all fields")</script>';
+
+        $errorMSG = "الرجاء إدخال جميع الحقول";
+        $showError = "block";
+        echo '<script type="text/javascript" src="main3.js"></script>';
     }
 }
 
@@ -175,11 +181,12 @@ function test_input($data)
                 </div>
             </div>
             <input type="submit" class="btn" value="إنشاء حساب">
-
-
+            <span style="color: red; display: <?php echo $showError; ?> ">      <?php echo $errorMSG; ?> </span>
         </form>
-        <div class="errormsg" style="display: <?php echo $showError; ?>">  <?php echo $errorMSG; ?> </div>
+
     </div>
+
+
 
 </div>
 <script type="text/javascript" src="main.js"></script>
