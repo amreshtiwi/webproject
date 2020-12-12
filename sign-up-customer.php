@@ -21,13 +21,75 @@ if (!empty($_POST)) {
             $errorMSG = "كلمة المرور غير متطابقه";
             $showError = "block";
             echo '<script type="text/javascript" src="main3.js"></script>';
-        } else if ($birthday < $now) {
+        } else if ($birthday > $now) {
             $errorMSG = "خطأ في تاريخ الميلاد";
             $showError = "block";
             echo '<script type="text/javascript" src="main3.js"></script>';
+        } else {
+            try {
+                $user = 'root';
+                $pass = '';
+                $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
+                $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $res = $db->query("select CID from customer order by CID DESC");
+                $last = $res->fetch();
+                $lastID = $last[0];
+                $lastID = substr($lastID, 1);
+                $Id = $lastID + 1;
+                $formatted_value = sprintf("%010d", $Id);
+                $NewID = 'c' . $formatted_value;
+                $query = "insert into Customer values('" . $NewID . "', '" . $gender . "', '" . $birthday . "',  '" . $PhoneNum . "', '" . $email . "', '" . sha1($Pass1) . "')";
+                $result = $db->query($query);
+                if (!$result) {
+                    $errorMSG = "حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
+                    $showError = "block";
+                    echo '<script type="text/javascript" src="main3.js"></script>';
+                } else {
+                    $query = "insert into customerfullname values('" . $NewID . "', '" . $Fname . "', '" . $LName ."')";
+                    $result = $db->query($query);
+                    if($result){
+                        echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
+                        echo '<script> window.location.href = "index.html"; </script>';
+                    }else {
+                        $errorMSG = " 2حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
+                        $showError = "block";
+                        echo '<script type="text/javascript" src="main3.js"></script>';
+                    }
+                }
+            } catch (PDOException $e) {
+                $errorMSG = "حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
+                $showError = "block";
+                echo '<script type="text/javascript" src="main3.js"></script>';
+            }
+
+
         }
     } else {
-
+        if (isset($_POST['FName'])) {
+            $Fname = test_input($_POST['FName']);
+        }
+        if (isset($_POST['LName'])) {
+            $LName = test_input($_POST['LName']);
+        }
+        if (isset($_POST['email'])) {
+            $email = test_input($_POST['email']);
+        }
+        if (isset($_POST['gender'])) {
+            $gender = test_input($_POST['gender']);
+        }
+        if (isset($_POST['birthday'])) {
+            $birthday = test_input($_POST['birthday']);
+        }
+        if (isset($_POST['PhoneNum'])) {
+            $PhoneNum = test_input($_POST['PhoneNum']);
+        }
+        if (isset($_POST['pass1'])) {
+            $Pass1 = test_input($_POST['pass1']);
+        }
+        if (isset($_POST['pass2'])) {
+            $Pass2 = test_input($_POST['pass2']);
+        }
         $errorMSG = "الرجاء إدخال جميع الحقول";
         $showError = "block";
         echo '<script type="text/javascript" src="main3.js"></script>';
@@ -113,13 +175,13 @@ function test_input($data)
                 </div>
                 <div>
                     <h5>الجنس</h5>
-                    <input type="radio" id="male" name="gender" value="male"
-                        <?php if (isset($gender) && $gender == "male") echo "checked"; ?>>
+                    <input type="radio" id="male" name="gender" value="M"
+                        <?php if (isset($gender) && $gender == "M") echo "checked"; ?>>
                     <label for="male">ذكر</label>
                     <!--                    <br>-->
 
                     <input type="radio" id="female" name="gender"
-                           value="female" <?php if (isset($gender) && $gender == "female") echo "checked"; ?>>
+                           value="F" <?php if (isset($gender) && $gender == "F") echo "checked"; ?>>
                     <label for="female">أنثى</label>
                     <br>
                 </div>
@@ -185,7 +247,6 @@ function test_input($data)
         </form>
 
     </div>
-
 
 
 </div>
