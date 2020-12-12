@@ -31,7 +31,6 @@ if (!empty($_POST)) {
                 $pass = '';
                 $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
                 $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
                 $res = $db->query("select CID from customer order by CID DESC");
                 $last = $res->fetch();
                 $lastID = $last[0];
@@ -62,8 +61,6 @@ if (!empty($_POST)) {
                 $showError = "block";
                 echo '<script type="text/javascript" src="main3.js"></script>';
             }
-
-
         }
     } else {
         if (isset($_POST['FName'])) {
