@@ -3,13 +3,14 @@
     $to = 'ramisir3@gmail.com';
     $body = $_POST['message'];
     $Client = $_POST['email'];
+    $headers = 'From: softwareproject92@gmail.com';
     $subject = 'WebSite Msg from ' . $Client;
-    if (mail($to, $subject, $body)) {
-        echo "Email successfully sent to $to...";
+    if (mail($to, $subject, $body,$headers)) {
+        echo '<script>alert("Email successfully sent to' .$to. '");</script>';
         echo '<script> window.location.href = "index.html"; </script>';
 
     } else {
-        echo "Email sending failed...";
+        echo '<script>alert("Email Failed...");</script>';
         echo '<script> window.location.href = "index.html"; </script>';
 
     }
