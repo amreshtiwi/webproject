@@ -1,14 +1,14 @@
 const inputs = document.querySelectorAll(".input");
 
 
-function addcl(){
+function addcl() {
     let parent = this.parentNode.parentNode;
     parent.classList.add("focus");
 }
 
-function remcl(){
+function remcl() {
     let parent = this.parentNode.parentNode;
-    if(this.value == ""){
+    if (this.value == "") {
         parent.classList.remove("focus");
     }
 }
@@ -19,16 +19,16 @@ inputs.forEach(input => {
     input.addEventListener("blur", remcl);
 });
 
-function goback(){
+function goback() {
     window.history.back();
 }
 
-function salonsignupfunc(){
-    document.getElementById("login-content").style.display="none";
-    document.getElementById("login-content1").style.display="flex";
+function salonsignupfunc() {
+    document.getElementById("login-content").style.display = "none";
+    document.getElementById("login-content1").style.display = "flex";
 }
 
-(function(){
+(function () {
 
     document.getElementById("passDiv").classList.remove('focus');
     document.getElementById("emailDiv").classList.remove('focus');
@@ -52,24 +52,25 @@ function salonsignupfunc(){
 
 
 })()
+
 //for the time button in the customer page
-function dlgCancel(){
+function dlgCancel() {
     dlgHide();
 }
 
-function dlgOK(){
+function dlgOK() {
     dlgHide();
     //implement code to save data
 }
 
-function dlgHide(){
+function dlgHide() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox");
     whitebg.style.display = "none";
     dlg.style.display = "none";
 }
 
-function showDialog(){
+function showDialog() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox");
     whitebg.style.display = "block";
@@ -77,28 +78,28 @@ function showDialog(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 }
 
 // for the log out button in customer page
-function dlgCancel1(){
+function dlgCancel1() {
     dlgHide1();
 }
 
-function dlgOK1(){
+function dlgOK1() {
     dlgHide1();
     window.location.replace("logIn.html");
 }
 
-function dlgHide1(){
+function dlgHide1() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox1");
     whitebg.style.display = "none";
     dlg.style.display = "none";
 }
 
-function showDialog1(){
+function showDialog1() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox1");
     whitebg.style.display = "block";
@@ -106,29 +107,30 @@ function showDialog1(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 
 }
+
 //for the setting button in customer page
 
-function dlgCancel2(){
+function dlgCancel2() {
     dlgHide2();
 }
 
-function dlgOK2(){
+function dlgOK2() {
     dlgHide2();
     window.location.replace("logIn.html");
 }
 
-function dlgHide2(){
+function dlgHide2() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox2");
     whitebg.style.display = "none";
     dlg.style.display = "none";
 }
 
-function showDialog2(){
+function showDialog2() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox2");
     whitebg.style.display = "block";
@@ -136,28 +138,30 @@ function showDialog2(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 
 }
+
 //show password changer dialog
 
-function dlgCancel3(){
+function dlgCancel3() {
     dlgHide3();
 }
 
-function dlgOK3(){
+function dlgOK3() {
     dlgHide3();
     //implement code to save data
 }
 
-function dlgHide3(){
+function dlgHide3() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox3");
     whitebg.style.display = "none";
     dlg.style.display = "none";
 }
-function showDialog3(){
+
+function showDialog3() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox3");
     whitebg.style.display = "block";
@@ -165,25 +169,26 @@ function showDialog3(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 
 }
 
-function changePassDialog(){
+function changePassDialog() {
     dlgHide2();
     showDialog3();
 }
+
 //end show password changer dialog
 
 //show information data dialog
 
-function infoDialog(){
+function infoDialog() {
     dlgHide2();
     showDialog4();
 }
 
-function showDialog4(){
+function showDialog4() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox4");
     whitebg.style.display = "block";
@@ -191,21 +196,21 @@ function showDialog4(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 
 }
 
-function dlgCancel4(){
+function dlgCancel4() {
     dlgHide4();
 }
 
-function dlgOK4(){
+function dlgOK4() {
     dlgHide4();
     //implement code to save data
 }
 
-function dlgHide4(){
+function dlgHide4() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox4");
     whitebg.style.display = "none";
@@ -215,12 +220,12 @@ function dlgHide4(){
 //end show information data dialog
 
 //show delete dialoge
-function deleteDialog(){
+function deleteDialog() {
     dlgHide2();
     showDialog5();
 }
 
-function showDialog5(){
+function showDialog5() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox5");
     whitebg.style.display = "block";
@@ -228,27 +233,28 @@ function showDialog5(){
 
     var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth/2) - 480/2 + "px";
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
     dlg.style.top = "150px";
 
 }
 
 
-function dlgCancel5(){
+function dlgCancel5() {
     dlgHide5();
 }
 
-function dlgOK5(){
+function dlgOK5() {
     dlgHide5();
     //implement code to save data
 }
 
-function dlgHide5(){
+function dlgHide5() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox5");
     whitebg.style.display = "none";
     dlg.style.display = "none";
 }
+
 //end show delete dialoge
 
 // (document).ready(function(){
@@ -263,3 +269,19 @@ function dlgHide5(){
 //     });
 // });
 //
+
+function validate() {
+        // Create a date variable which stores the current day at 00:00 local time.
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Parse the provided date in the default YYYY-MM-DD format.
+        let birthdate = new Date(document.getElementById("birthday").value);
+
+        // Check whether the provided date is equal to or less than the current date.
+        if (birthdate <= today) {
+
+        } else {
+            alert("fwefwf");
+        }
+}
