@@ -256,7 +256,7 @@ function dlgHide5() {
 }
 
 //end show delete dialoge
-
+//****************************************************************************************************************
 // (document).ready(function(){
 //     (".default_option").click(function(){
 //         (".dropdown ul").addClass("active");
@@ -269,19 +269,21 @@ function dlgHide5() {
 //     });
 // });
 //
+//
+// function validate() {
+//         // Create a date variable which stores the current day at 00:00 local time.
+//         let today = new Date();
+//         today.setHours(0, 0, 0, 0);
+//
+//         // Parse the provided date in the default YYYY-MM-DD format.
+//         let birthdate = new Date(document.getElementById("birthday").value);
+//
+//         // Check whether the provided date is equal to or less than the current date.
+//         if (birthdate <= today) {
+//
+//         } else {
+//             alert("fwefwf");
+//         }
+// }
+//*******************************************************************************************
 
-function validate() {
-        // Create a date variable which stores the current day at 00:00 local time.
-        let today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        // Parse the provided date in the default YYYY-MM-DD format.
-        let birthdate = new Date(document.getElementById("birthday").value);
-
-        // Check whether the provided date is equal to or less than the current date.
-        if (birthdate <= today) {
-
-        } else {
-            alert("fwefwf");
-        }
-}
