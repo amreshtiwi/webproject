@@ -9,6 +9,7 @@ if ($_GET['click'] == 0) {
     $phone = $_SESSION['phone'];
     $pass1 = $_SESSION['pass1'];
     $pass2 = $_SESSION['pass2'];
+    echo '<script type="text/javascript" src="main3.js"></script>';
 }
 
 ?>
@@ -122,6 +123,10 @@ if ($_GET['click'] == 0) {
     </div>
 </div>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+    document.getElementById("phoneNum").classList.remove('focus');
+    document.getElementById("rrpassDiv").classList.remove('focus');
+</script>
 <script type="text/javascript" src="main2.js"></script>
 </body>
 </html>

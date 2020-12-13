@@ -39,15 +39,12 @@ function salonsignupfunc() {
 
 
     //document.getElementById("email").classList.remove('focus');
-    document.getElementById("phoneNum").classList.remove('focus');
+
     document.getElementById("rpassDiv").classList.remove('focus');
-    document.getElementById("license_salon").classList.remove('focus');
     document.getElementById("city").classList.remove('focus');
     document.getElementById("street").classList.remove('focus');
     document.getElementById("website").classList.remove('focus');
     document.getElementById("days").classList.remove('focus');
-    document.getElementById("from_time").classList.remove('focus');
-    document.getElementById("to_time").classList.remove('focus');
     document.getElementById("rrpassDiv").classList.remove('focus');
 
 

@@ -11,7 +11,7 @@ if (isset($_POST['Page1'])) {
         $phone = test_input($_POST['phone']);
         $pass1 = test_input($_POST['pass1']);
         $pass2 = test_input($_POST['pass2']);
-        echo '<script> alert("'.$Gender.'"); </script>';
+//        echo '<script> alert("'.$Gender.'"); </script>';
         if ($pass1 == $pass2) {
             $_SESSION['SID'] = $_SESSION['City'] = $_SESSION['Street'] = $_SESSION['website'] = "";
             $_SESSION['SalName'] = $SalName;

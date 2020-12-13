@@ -311,7 +311,7 @@ form{
     max-width: 500px;
     /*max-height: 700px;*/
     border-radius: 50px;
-    margin-top: 20px;
+    margin-top: 70px;
     margin-right: 33%;
     margin-bottom: 20px;
     display: flex;
@@ -330,121 +330,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: none;
 }
 
-.complete_sign{
-    background-color: #8b8b8b;
-    padding: 30px 40px 50px 10px;
-    max-width: 500px;
-    max-height: 700px;
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-left: 33%;
-    margin-bottom: 20px;
-    text-align: center;
 
-}
-img{
-    height: 200px;
-}
-.profile-pic-div{
-    height: 200px;
-    width: 200px;
+.backbtn{
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid black;
-}
-#photo{
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-}
-
-#file{
-    display: none;
-}
-
-#uploadeBtn{
-    height: 40px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background: rgba(46, 46, 46, 0.7);
-    color: #bc8500;
-    line-height: 30px;
-    font-family: sans-serif;
-    font-size: 15px;
-    cursor: pointer;
-    display: none;
-}
-
-.services{
-    background-color: #8b8b8b;
-    padding: 30px 40px 50px 10px;
-    max-height: 700px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    position: relative;
-    margin-top: 12.5% ;
-    max-width: 700px;
-    margin-left: 27%;
+    top: 2%;
     font-family: 'Lalezar', cursive;
+    color: #2e2e2e;
+    background: #bcbcbc;
+    border-radius: 30px;
+    right: 3%;
 }
-.services div h5{
-    text-align: right;
+
+.backbtn a{
+    margin: 20px;
     font-size: 24px;
-    color: #2e2e2e;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #2e2e2e;
-}
-.services-container{
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap ;
-    justify-content: center;
+
 }
 
-.services-container div{
-    margin: 10px;
-}
-
-.services-container div label {
-    cursor: pointer;
-}
-
-.services-container div label input[type="checkbox"]{
-    display: none;
-}
-
-.services-container div label span {
-    position: relative;
-    display: inline-block;
-    background: #2e2e2e;
-    padding: 15px 30px;
-    color: #bcbcbc;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-    border-radius:30px ;
-    font-size: 16px;
-    transition: 0.5s;
-    user-select: none;
-    overflow: hidden;
-}
-
-.services-container div label input[type="checkbox"]:checked ~ span{
-    background: #bc8500;
-    color: #2e2e2e;
-}
-
-.btn2{
-    display: inline-block;
-    width: 40%;
-    margin-left: 30%;
-    margin-top: 5%;
-    margin-bottom: 0 !important;
-    font-family: 'Lalezar', cursive;
+.backbtn span{
+    margin-right: 20px;
 }

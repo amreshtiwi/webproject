@@ -35,3 +35,7 @@ file.addEventListener('change', function(){
         reader.readAsDataURL(choosedFile);
     }
 });
+(function () {
+    document.getElementById("from_time").classList.remove('focus');
+    document.getElementById("to_time").classList.remove('focus');
+})()

@@ -26,8 +26,12 @@ if ($_GET['click'] == 0) {
 </head>
 <body id="bodyid">
 <div class="wrap">
-    <div class="exit" onclick="goback()"><span><i class="fas fa-times"></i></span></div>
+<!--    <div class="exit" onclick="goback()"><span><i class="fas fa-times"></i></span></div>-->
+    <div class="backbtn" onclick="goback1">
+        <span><i class="fas fa-chevron-right"></i></span><a>رجوع</a>
+    </div>
     <div class="login-content1" id="login-content1">
+
         <form action="SignUpSaloon1.php" method="post">
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498.3 158.6">
                 <title>halaqee4</title>
@@ -86,46 +90,12 @@ if ($_GET['click'] == 0) {
                 </div>
             </div>
 
-            <div class="timefromto">
-                <div id="days" class="input-div one focus">
-                    <div class="i">
-                        <i class="fas fa-calendar-day"></i>
-                    </div>
-                    <div>
-                        <h5>أيام الدوام</h5>
-                        <input class="input" type="text">
-                    </div>
-
-                </div>
-
-                <div id="from_time" class="input-div two focus">
-                    <div class="i">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h5 class="mar">من</h5>
-                        <input class="input" type="time" >
-                    </div>
-                </div>
-
-                <div id="to_time" class="input-div three focus">
-                    <div class="i">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h5 class="mar">إلى</h5>
-                        <input class="input" type="time">
-                    </div>
-                </div>
-
-
-            </div>
 
             <input type="submit" name="Page2" class="btn" value="التالي">
         </form>
     </div>
 </div>
-<script type="text/javascript" src="main.js"></script>
 <script type="text/javascript" src="main2.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

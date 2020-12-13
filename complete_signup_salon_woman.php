@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>حلاقي</title>
     <link rel="icon" href="imgs/halaqee4.png">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style4.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,6 +13,10 @@
 </head>
 <body>
 <div class="wrap">
+    <div class="backbtn"onclick="goback1">
+        <a>رجوع</a><span><i class="fas fa-chevron-right"></i></span>
+    </div>
+    <form>
     <div class="complete_sign">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498.3 158.6">
             <title>halaqee4</title>
@@ -25,11 +29,79 @@
             <label for="file" id="uploadeBtn">إختر صوره</label>
         </div>
 
-        <!--        <div class="services">-->
-        <!--            -->
-        <!--        </div>-->
     </div>
+    <div class="services1">
+        <div>
+            <h6>إختر أيام دوامك</h6>
+        </div>
+        <div class="services-container" >
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>السبت</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الأحد</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الإثنين</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الثلاثاء</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الأربعاء</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الخميس</span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" name="">
+                    <span>الجمعه</span>
+                </label>
+            </div>
+        </div>
+        <div class="flname">
+            <div id="to_time" class="input-div one focus">
+                <div class="i">
+                    <!--                    <i class="fas fa-city"></i>-->
+                </div>
+                <div>
+                    <h5>إلى</h5>
+                    <input class="input" type="time" >
+                </div>
 
+            </div>
+
+            <div id="from_time" class="input-div two focus">
+                <div class="i">
+                    <!--                    <i class="fas fa-road"></i>-->
+                </div>
+                <div>
+                    <h5 class="mar">من</h5>
+                    <input class="input" type="time" >
+                </div>
+            </div>
+
+        </div>
+    </div>
     <div class="services">
         <div>
             <h5>إختر الخدمات المتوفره في صالونك</h5>
@@ -143,7 +215,10 @@
             <input type="submit" class="btn btn2" value="!إنطلق">
         </div>
     </div>
+    </form>
 </div>
+
 <script src="main4.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
