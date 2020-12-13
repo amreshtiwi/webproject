@@ -7,11 +7,11 @@
     $subject = 'WebSite Msg from ' . $Client;
     if (mail($to, $subject, $body,$headers)) {
         echo '<script>alert("Email successfully sent to' .$to. '");</script>';
-        echo '<script> window.location.href = "index.html"; </script>';
+        echo '<script> window.location.href = "index.php"; </script>';
 
     } else {
         echo '<script>alert("Email Failed...");</script>';
-        echo '<script> window.location.href = "index.html"; </script>';
+        echo '<script> window.location.href = "index.php"; </script>';
 
     }
 //    require_once('./PHPMailer/PHPMailerAutoload.php');
@@ -30,7 +30,7 @@
 //        $mail->SetFrom('softwareproject92@gmail.com');
 //    } catch (phpmailerException $e) {
 //        echo ' setfrom exception ' . $e->errorMessage();
-//        echo '<script> window.location.href = "index.html"; </script>';
+//        echo '<script> window.location.href = "index.php"; </script>';
 //    }
 //    $mail->Subject = 'WebSite Msg from ' . $Client;
 //    $body = $message;
@@ -40,7 +40,7 @@
 //        $mail->send();
 //    } catch (phpmailerException $e) {
 //        echo ' send exception ' . $e->errorMessage();
-//        echo '<script> window.location.href = "index.html"; </script>';
+//        echo '<script> window.location.href = "index.php"; </script>';
 //    }
 
   //  echo '<script> alert("Email Sent Successfully")</script>';

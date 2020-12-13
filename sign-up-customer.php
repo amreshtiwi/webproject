@@ -48,7 +48,7 @@ if (!empty($_POST)) {
                     $result = $db->query($query);
                     if($result){
                         echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
-                        echo '<script> window.location.href = "index.html"; </script>';
+                        echo '<script> window.location.href = "index.php"; </script>';
                     }else {
                         $errorMSG = " 2حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
                         $showError = "block";
@@ -226,7 +226,7 @@ function test_input($data)
                 <div>
                     <h5>كلمة المرور </h5>
                     <input class="input" type="password" pattern=".{8,}" name="pass1" title="Eight or more characters"
-                           required value="<?php echo $Pass1; ?>">
+                           required maxlength="64" value="<?php echo $Pass1; ?>">
                 </div>
             </div>
 
@@ -237,7 +237,7 @@ function test_input($data)
                 <div>
                     <h5>إعادة كلمة المرور</h5>
                     <input class="input" type="password" pattern=".{8,}" name="pass2" title="Eight or more characters"
-                           required value="<?php echo $Pass2; ?>">
+                           required maxlength="64" value="<?php echo $Pass2; ?>">
                 </div>
             </div>
             <input type="submit" class="btn" value="إنشاء حساب">

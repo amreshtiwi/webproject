@@ -1,3 +1,15 @@
+<?php
+session_start();
+if ($_GET['click'] == 0) {
+    $image = $services = "";
+} else {
+    $SID = $_SESSION['SID'];
+    $City = $_SESSION['City'];
+    $Street = $_SESSION['Street'];
+    $website = $_SESSION['website'];
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

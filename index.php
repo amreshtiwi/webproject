@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION['SalName'] = $_SESSION['Gender'] = $_SESSION['email'] = $_SESSION['phone'] = $_SESSION['pass1'] = $_SESSION['pass2'] = "";
+?>
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -31,7 +35,7 @@
                 <a href="#" class="sign">إنشاء حساب </a>
                 <div class="dropdown-content">
                     <a href="sign-up-customer.php">كزبون</a>
-                    <a href="signup-salon.html">كصالون</a>
+                    <a href="signup-salon.php?click=0">كصالون</a>
                 </div>
             </div>
 

@@ -318,7 +318,7 @@ form{
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    display: none;
+    display: flex;
 }
 
 input[type="time"]::-webkit-calendar-picker-indicator {
