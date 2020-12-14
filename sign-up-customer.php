@@ -30,30 +30,47 @@ if (!empty($_POST)) {
                 $pass = '';
                 $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
                 $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $res = $db->query("select CID from customer order by CID DESC");
-                $last = $res->fetch();
-                $lastID = $last[0];
-                $lastID = substr($lastID, 1);
-                $Id = $lastID + 1;
-                $formatted_value = sprintf("%010d", $Id);
-                $NewID = 'c' . $formatted_value;
-                $query = "insert into Customer values('" . $NewID . "', '" . $gender . "', '" . $birthday . "',  '" . $PhoneNum . "', '" . $email . "', '" . sha1($Pass1) . "')";
-                $result = $db->query($query);
-                if (!$result) {
-                    $errorMSG = "حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
-                    $showError = "block";
-                    echo '<script type="text/javascript" src="main3.js"></script>';
-                } else {
-                    $query = "insert into customerfullname values('" . $NewID . "', '" . $Fname . "', '" . $LName ."')";
+                $EmailFlag = 0;
+                $res = $db->query("select Email from login");
+                $sizeOfRes = $res->rowCount();
+                for ($i = 0; $i < $sizeOfRes; $i++) {
+                    $row = $res->fetch();
+                    if ($email == $row[0]) {
+                        $EmailFlag = 1;
+                    }
+                }
+                if ($EmailFlag == 0) {
+                    $res = $db->query("select CID from customer order by CID DESC");
+                    $last = $res->fetch();
+                    $lastID = $last[0];
+                    $lastID = substr($lastID, 1);
+                    $Id = $lastID + 1;
+                    $formatted_value = sprintf("%010d", $Id);
+                    $NewID = 'c' . $formatted_value;
+                    $query = "insert into Customer values('" . $NewID . "', '" . $gender . "', '" . $birthday . "',  '" . $PhoneNum . "', '" . $email . "', '" . sha1($Pass1) . "')";
                     $result = $db->query($query);
-                    if($result){
-                        echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
-                        echo '<script> window.location.href = "index.php"; </script>';
-                    }else {
-                        $errorMSG = " 2حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
+                    if (!$result) {
+                        $errorMSG = "حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
                         $showError = "block";
                         echo '<script type="text/javascript" src="main3.js"></script>';
+                    } else {
+                        $query = "insert into customerfullname values('" . $NewID . "', '" . $Fname . "', '" . $LName . "')";
+                        $result = $db->query($query);
+                        if ($result) {
+                            $query = "insert into login values('" . $email . "', '".sha1($Pass1)."', '" . $NewID . "', 'C')";
+                            $result = $db->query($query);
+                            echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
+                            echo '<script> window.location.href = "index.php"; </script>';
+                        } else {
+                            $errorMSG = " حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
+                            $showError = "block";
+                            echo '<script type="text/javascript" src="main3.js"></script>';
+                        }
                     }
+                }else {
+                    $errorMSG = "البريد الالكتروني مستخدم سابقاً";
+                    $showError = "block";
+                    echo '<script type="text/javascript" src="main3.js"></script>';
                 }
             } catch (PDOException $e) {
                 $errorMSG = "حصل خطأ أثناء عمل الحساب. الرجاء المحاولة لاحقاً";
@@ -192,7 +209,7 @@ function test_input($data)
                 <div>
                     <h5>تاريخ الميلاد</h5>
                     <input class="input" type="date" name="birthday" id="birthday" required
-                           value="<?php echo $birthday; ?>" min="1900-01-01" max=" <?php echo date("Y-m-d")?>">
+                           value="<?php echo $birthday; ?>" min="1900-01-01" max=" <?php echo date("Y-m-d") ?>">
                 </div>
             </div>
 
@@ -241,7 +258,7 @@ function test_input($data)
                 </div>
             </div>
             <input type="submit" class="btn" value="إنشاء حساب">
-            <span style="color: red; display: <?php echo $showError; ?> ">      <?php echo $errorMSG; ?> </span>
+            <span style="color: darkred; display: <?php echo $showError; ?> ">      <?php echo $errorMSG; ?> </span>
         </form>
 
     </div>

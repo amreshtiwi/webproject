@@ -86,7 +86,7 @@ function dlgCancel1() {
 
 function dlgOK1() {
     dlgHide1();
-    window.location.replace("logIn.html");
+    window.location.replace("logIn.php");
 }
 
 function dlgHide1() {
@@ -117,7 +117,7 @@ function dlgCancel2() {
 
 function dlgOK2() {
     dlgHide2();
-    window.location.replace("logIn.html");
+    window.location.replace("logIn.php");
 }
 
 function dlgHide2() {

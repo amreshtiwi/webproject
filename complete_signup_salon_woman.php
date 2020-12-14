@@ -1,3 +1,13 @@
+<?php
+session_start();
+$image = $_SESSION['Image'];
+$Days =   $_SESSION['Days'];
+$servicesF =  $_SESSION['ServicesFemale1'];
+$start =  $_SESSION['start'];
+$end =  $_SESSION['end'];
+$showError = $_SESSION['showErrorPage4'];
+$errorMSG = $_SESSION['errorMSGPage4'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +26,7 @@
     <div class="backbtn"onclick="goback1">
         <a>رجوع</a><span><i class="fas fa-chevron-right"></i></span>
     </div>
-    <form>
+    <form action="SignUpSaloonProcess.php" method="post">
     <div class="complete_sign">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498.3 158.6">
             <title>halaqee4</title>
@@ -25,7 +35,7 @@
 
         <div class="profile-pic-div">
             <img src="imgs/avatar-woman.png" id="photo">
-            <input type="file" id="file">
+            <input type="file" id="file" value="<?php echo $image;?>">
             <label for="file" id="uploadeBtn">إختر صوره</label>
         </div>
 
@@ -37,43 +47,43 @@
         <div class="services-container" >
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Sat" <?php if ($Days[0] == 1) echo 'checked'; ?>>
                     <span>السبت</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Sun" <?php if ($Days[1] == 1) echo 'checked'; ?>>
                     <span>الأحد</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Mon" <?php if ($Days[2] == 1) echo 'checked'; ?>>
                     <span>الإثنين</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Tue" <?php if ($Days[3] == 1) echo 'checked'; ?>>
                     <span>الثلاثاء</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Wed" <?php if ($Days[4] == 1) echo 'checked'; ?>>
                     <span>الأربعاء</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Thu" <?php if ($Days[5] == 1) echo 'checked'; ?>>
                     <span>الخميس</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Days[]" value="Fri" <?php if ($Days[6] == 1) echo 'checked'; ?>>
                     <span>الجمعه</span>
                 </label>
             </div>
@@ -85,7 +95,7 @@
                 </div>
                 <div>
                     <h5>إلى</h5>
-                    <input class="input" type="time" >
+                    <input class="input" type="time" name="end" value="<?php echo $end; ?>">
                 </div>
 
             </div>
@@ -96,7 +106,7 @@
                 </div>
                 <div>
                     <h5 class="mar">من</h5>
-                    <input class="input" type="time" >
+                    <input class="input" type="time" name="start" value="<?php echo $start; ?>">
                 </div>
             </div>
 
@@ -109,110 +119,111 @@
         <div class="services-container" >
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="hairCut" <?php if ($servicesF[0] == 1) echo 'checked'; ?>>
                     <span>قص شعر</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="dryer" <?php if ($servicesF[1] == 1) echo 'checked'; ?>>
                     <span>سشوار</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="wax" <?php if ($servicesF[2] == 1) echo 'checked'; ?>>
                     <span>واكس</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="eyebrows" <?php if ($servicesF[3] == 1) echo 'checked'; ?>>
                     <span>حواجب</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="laser" <?php if ($servicesF[4] == 1) echo 'checked'; ?>>
                     <span>ليزر</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="highlight" <?php if ($servicesF[5] == 1) echo 'checked'; ?>>
                     <span>هاي لايت</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="style" <?php if ($servicesF[6] == 1) echo 'checked'; ?>>
                     <span>تسريحه</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="makeup" <?php if ($servicesF[7] == 1) echo 'checked'; ?>>
                     <span>ميك اب</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="pedicure" <?php if ($servicesF[8] == 1) echo 'checked'; ?>>
                     <span>بدكير</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="manicure" <?php if ($servicesF[9] == 1) echo 'checked'; ?>>
                     <span>منكير</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="skin" <?php if ($servicesF[10] == 1) echo 'checked'; ?>>
                     <span>تنظيف بشره</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="dye" <?php if ($servicesF[11] == 1) echo 'checked'; ?>>
                     <span>صبغه</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="mesh" <?php if ($servicesF[12] == 1) echo 'checked'; ?>>
                     <span>ميش</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="oil" <?php if ($servicesF[13] == 1) echo 'checked'; ?>>
                     <span>حمام زيت</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="protein" <?php if ($servicesF[14] == 1) echo 'checked'; ?>>
                     <span>بروتين</span>
                 </label>
             </div>
 
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="String" <?php if ($servicesF[15] == 1) echo 'checked'; ?>>
                     <span>تنظيف بالخيط</span>
                 </label>
             </div>
             <div>
                 <label>
-                    <input type="checkbox" name="">
+                    <input type="checkbox" name="Services[]" value="keratin" <?php if ($servicesF[16] == 1) echo 'checked'; ?>>
                     <span>كراتين</span>
                 </label>
             </div>
         </div>
         <div>
-            <input type="submit" class="btn btn2" value="!إنطلق">
+            <input type="submit" class="btn btn2" name="Page4" value="التالي">
+            <span style="color: darkred; display: <?php echo $showError; ?> ">      <?php echo $errorMSG; ?> </span>
         </div>
     </div>
     </form>
