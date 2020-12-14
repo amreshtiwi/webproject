@@ -1,49 +1,36 @@
 <?php
 
-    $to = 'ramisir3@gmail.com';
-    $body = $_POST['message'];
-    $Client = $_POST['email'];
-    $headers = 'From: softwareproject92@gmail.com';
-    $subject = 'WebSite Msg from ' . $Client;
-    if (mail($to, $subject, $body,$headers)) {
-        echo '<script>alert("Email successfully sent to' .$to. '");</script>';
-        echo '<script> window.location.href = "index.php"; </script>';
+$to = 'ramisir3@gmail.com';
+$body = $_POST['message'];
+$Client = $_POST['email'];
 
-    } else {
-        echo '<script>alert("Email Failed...");</script>';
-        echo '<script> window.location.href = "index.php"; </script>';
 
-    }
-//    require_once('./PHPMailer/PHPMailerAutoload.php');
-//
-//    $mail = new PHPMailer();
-//    $mail->CharSet = 'UTF-8';
-//    $mail->IsSMTP();
-//    $mail->SMTPAuth = true;
-//    $mail->Host = 'smtp.gmail.com';
-//    $mail->SMTPSecure = 'ssl';
-//    $mail->Port = 587;
-//    $mail->isHTML();
-//    $mail->Username = 'softwareproject92@gmail.com';
-//    $mail->Password = '101200119';
-//    try {
-//        $mail->SetFrom('softwareproject92@gmail.com');
-//    } catch (phpmailerException $e) {
-//        echo ' setfrom exception ' . $e->errorMessage();
-//        echo '<script> window.location.href = "index.php"; </script>';
-//    }
-//    $mail->Subject = 'WebSite Msg from ' . $Client;
-//    $body = $message;
-//    $mail->Body = $body;
-//    $mail->AddAddress($to);
-//    try {
-//        $mail->send();
-//    } catch (phpmailerException $e) {
-//        echo ' send exception ' . $e->errorMessage();
-//        echo '<script> window.location.href = "index.php"; </script>';
-//    }
+require 'PHPMailer/PHPMailerAutoload.php';
 
-  //  echo '<script> alert("Email Sent Successfully")</script>';
+$mail = new PHPMailer;
+//$mail->CharSet = 'UTF-8';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->IsSMTP();
+$mail->SMTPAuth = true;
+$mail->SMTPSecure = 'tls';
+$mail->Username = 'softwareproject92@gmail.com';
+$mail->Password = '101200119';
+$mail->SetFrom('softwareproject92@gmail.com', 'Halaqi');
+$mail->AddAddress($to);
+$mail->addReplyTo('softwareproject92@gmail.com');
+$mail->isHTML(true);
+$mail->Subject = 'WebSite Msg from ' . $Client;
+//$body = $message;
+$mail->Body = $body;
+
+if (!$mail->send()) {
+    echo '<script> alert("Email Failed")</script>';
+    echo '<script> alert("' . $mail->ErrorInfo . '")</script>';
+} else {
+    echo '<script> alert("Email Sent Successfully")</script>';
+    echo '<script> window.location.href = "index.php"; </script>';
+}
 
 
 ?>
