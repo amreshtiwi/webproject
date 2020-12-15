@@ -7,7 +7,7 @@ body{
     background: #bcbcbc;
 }
 .wrap{
-    background: #bcbcbc url("imgs/back-halaq2.jpg") no-repeat;
+    background: #bcbcbc url("../imgs/back-halaq2.jpg") no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 100vh;

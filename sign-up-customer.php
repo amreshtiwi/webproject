@@ -128,7 +128,7 @@ function test_input($data)
     <meta charset="UTF-8">
     <title>حلاقي</title>
     <link rel="icon" href="imgs/halaqee4.png">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="styles/style2.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
