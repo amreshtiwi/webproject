@@ -35,7 +35,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
         if ($loginFlag == 1) {
             $_SESSION['UserID'] = $ID;
             if ($type == 'C') {
-                echo '<script> window.location.href = "customer-page.html"; </script>';
+                echo '<script> window.location.href = "customer-page.php"; </script>';
             } else {
                 echo '<script> window.location.href = "saloon-page.html"; </script>';
             }
