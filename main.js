@@ -300,20 +300,51 @@ function dlgBookinghide() {
     dlg.style.display = "none";
 }
 
-function test(card_id){
-    alert(card_id);
+// function test(card_id){
+//     alert(card_id);
+// }
 
-}
+function showBookingDialog(SID) {
 
-function showBookingDialog() {
-    var whitebg = document.getElementById("white-background");
-    var dlg = document.getElementById("dlgBookingBox");
-    whitebg.style.display = "block";
-    dlg.style.display = "block";
+    var dataFrom = new FormData();
+    dataFrom.append('SID',SID);
 
-    var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
-    dlg.style.top = "150px";
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // document.getElementById("demo").innerHTML = this.responseText;
+            var selectServMenu= document.getElementById('selectServ');
+            var obj = JSON.parse(this.responseText);
 
+            //remove old options
+            var select = document.getElementById("selectServ");
+            var length = select.options.length;
+            for (i = length-1; i >= 0; i--) {
+                select.options[i] = null;
+            }
+
+            var option = document.createElement("option");
+            option.text = "خدمة";
+            selectServMenu.add(option);
+            for(var i =0;i<obj.length;i++){
+                var option = document.createElement("option");
+                var innerOBJ = obj[i];
+                option.text = innerOBJ['service'];
+                selectServMenu.add(option);
+
+                var whitebg = document.getElementById("white-background");
+                var dlg = document.getElementById("dlgBookingBox");
+                whitebg.style.display = "block";
+                dlg.style.display = "block";
+
+                var winWidth = window.innerWidth;
+
+                dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
+                dlg.style.top = "150px";
+            }
+        }
+    };
+    xhttp.open("POST", "SIDDialog.php", true);
+    xhttp.send(dataFrom);
 }

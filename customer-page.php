@@ -18,7 +18,9 @@ if (!isset($_SESSION['CusID'])) {
             for ($i = 0; $i < $count; $i++) {
                 $eachres = $res->fetch(PDO::FETCH_ASSOC);
                 $image = base64_encode($eachres['image']);
-                $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='images/" . $eachres['image'] . "' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
+                $SID = '"'.$eachres['SID'].'"';
+                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
                 //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
             }
         } catch (Exception $exception) {
