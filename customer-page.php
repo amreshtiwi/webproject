@@ -230,15 +230,18 @@ function test_input($data)
         </svg>
     </div>
 
-    <form action="?" method="post">
+
         <div id="dlg-body1" class="dlg-body">هل حقاً تود الخروج؟</div>
 
         <div id="dlg-footer1" class="dlg-footer">
+            <form action="?" method="post">
             <input type="submit" name="logout" value="تسجيل الخروج">
+            </form>
+            <button onclick="dlgCancel1()">إلغاء</button>
         </div>
-    </form>
 
-    <button onclick="dlgCancel1()">إلغاء</button>
+
+
 
 </div>
 <!--انتهاء ديالوج تسجيل الخروج-->
