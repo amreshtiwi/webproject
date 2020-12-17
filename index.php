@@ -142,7 +142,11 @@ $_SESSION['LoginPassword1'] = "";
             <div class="contact">
                 <span><i class="fas fa-phone"></i> &nbsp; +970 59 5141-904</span>
                 <br>
+                <span><i class="fas fa-phone"></i> &nbsp; +970 59 2460-316</span>
+                <br>
                 <span><i class="fas fa-envelope"></i> &nbsp; amr.eshtiwi@stu.najah.edu</span>
+                <br>
+                <span><i class="fas fa-envelope"></i> &nbsp; rami.abuseir@stu.najah.edu</span>
             </div>
             <br>
             <div class="social">

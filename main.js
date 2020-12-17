@@ -19,8 +19,11 @@ inputs.forEach(input => {
     input.addEventListener("blur", remcl);
 });
 
-function goback() {
+function goindex() {
     window.location.href="index.php";
+}
+function goback(){
+    window.history.back();
 }
 
 function salonsignupfunc() {
@@ -28,27 +31,6 @@ function salonsignupfunc() {
     document.getElementById("login-content1").style.display = "flex";
 }
 
-(function () {
-
-    document.getElementById("passDiv").classList.remove('focus');
-    document.getElementById("emailDiv").classList.remove('focus');
-
-    document.getElementById("fname").classList.remove('focus');
-    document.getElementById("lname").classList.remove('focus');
-    document.getElementById("date").classList.remove('focus');
-
-
-    //document.getElementById("email").classList.remove('focus');
-
-    document.getElementById("rpassDiv").classList.remove('focus');
-    document.getElementById("city").classList.remove('focus');
-    document.getElementById("street").classList.remove('focus');
-    document.getElementById("website").classList.remove('focus');
-    document.getElementById("days").classList.remove('focus');
-    document.getElementById("rrpassDiv").classList.remove('focus');
-
-
-})()
 
 //for the time button in the customer page
 function dlgCancel() {

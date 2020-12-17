@@ -33,7 +33,7 @@ if ($_GET['click'] == 0) {
 <div class="wrap">
 
 
-    <div class="exit" onclick="goback()"><span><i class="fas fa-times"></i></span></div>
+    <div class="exit" onclick="goindex()"><span><i class="fas fa-times"></i></span></div>
     <div class="login-content" id="login-content">
         <form action="SignUpSaloonProcess.php" method="post">
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498.3 158.6">
@@ -125,11 +125,16 @@ if ($_GET['click'] == 0) {
         </form>
     </div>
 </div>
-<script type="text/javascript" src="main.js"></script>
 <script type="text/javascript">
-    document.getElementById("phoneNum").classList.remove('focus');
-    document.getElementById("rrpassDiv").classList.remove('focus');
+    (function(){
+        document.getElementById("fname").classList.remove('focus');
+        document.getElementById("emailDiv").classList.remove('focus');
+        document.getElementById("phoneNum").classList.remove('focus');
+        document.getElementById("passDiv").classList.remove('focus');
+        document.getElementById("rrpassDiv").classList.remove('focus');
+    })()
 </script>
-<script type="text/javascript" src="main2.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
 </body>
 </html>

@@ -92,7 +92,14 @@ $website = $_SESSION['website'];
         </form>
     </div>
 </div>
-<script type="text/javascript" src="main2.js"></script>
+<script>
+    (function(){
+    document.getElementById("license_salon").classList.remove('focus');
+    document.getElementById("city").classList.remove('focus');
+    document.getElementById("street").classList.remove('focus');
+    document.getElementById("website").classList.remove('focus');
+    })()
+</script>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

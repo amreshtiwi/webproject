@@ -79,7 +79,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 </head>
 <body onload="myFunction()">
 <div class="wrap">
-    <div class="exit" onclick="goback()"><span><i class="fas fa-times"></i></span></div>
+    <div class="exit" onclick="goindex()"><span><i class="fas fa-times"></i></span></div>
     <div class="describe welcome">
         <h1>أهلاً وسهلاً بك</h1>
         <p>منصة حلاقي أكبر منصه في الوطن العربي لصالونات الحلاقه</p>

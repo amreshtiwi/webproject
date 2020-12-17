@@ -143,7 +143,7 @@ function test_input($data)
     <!--        <h1>أهلاً وسهلاً بك</h1>-->
     <!--        <p>منصة حلاقي أكبر منصه في الوطن العربي لصالونات الحلاقه</p>-->
     <!--    </div>-->
-    <div class="exit" onclick="goback()"><span><i class="fas fa-times"></i></span></div>
+    <div class="exit" onclick="goindex()"><span><i class="fas fa-times"></i></span></div>
     <div class="login-content">
         <form action="sign-up-customer.php" method="post">
             <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498.3 158.6">
@@ -265,6 +265,26 @@ function test_input($data)
 
 
 </div>
+<script>
+(function () {
+    document.getElementById("fname").classList.remove('focus');
+    document.getElementById("lname").classList.remove('focus');
+    document.getElementById("date").classList.remove('focus');
+    document.getElementById("emailDiv").classList.remove('focus');
+    document.getElementById("phoneNum").classList.remove('focus');
+    document.getElementById("passDiv").classList.remove('focus');
+    document.getElementById("rpassDiv").classList.remove('focus');
+
+
+// document.getElementById("city").classList.remove('focus');
+// document.getElementById("street").classList.remove('focus');
+// document.getElementById("website").classList.remove('focus');
+// document.getElementById("days").classList.remove('focus');
+// document.getElementById("rrpassDiv").classList.remove('focus');
+
+
+})()
+</script>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
