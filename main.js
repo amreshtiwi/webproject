@@ -20,7 +20,7 @@ inputs.forEach(input => {
 });
 
 function goback() {
-    window.history.back();
+    window.location.href="index.php";
 }
 
 function salonsignupfunc() {

@@ -121,7 +121,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
                 </div>
             </div>
 
-            <a href="#">نسيت كلمة المرور؟</a>
+            <a href="forgetpass.html">نسيت كلمة المرور؟</a>
             <input type="submit" class="btn" value="تسجيل الدخول" name="login">
             <span style="color: darkred; display: <?php echo $showError; ?> ">      <?php echo $errorMSG; ?> </span>
         </form>
