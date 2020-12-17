@@ -17,11 +17,11 @@ if (!isset($_SESSION['CusID'])) {
             $count = $res->rowCount();
             for ($i = 0; $i < $count; $i++) {
                 $eachres = $res->fetch(PDO::FETCH_ASSOC);
-                $image = base64_encode($eachres['image']);
-                $SID = '"'.$eachres['SID'].'"';
+                $SID = '"' . $eachres['SID'] . '"';
+                $res2 = $db->query("select * from salAddress where SID = $SID");
+                $address = $res2->fetch(PDO::FETCH_ASSOC);
                 $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
-                //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
             }
         } catch (Exception $exception) {
         }
@@ -48,9 +48,11 @@ if (!isset($_SESSION['CusID'])) {
                         for ($i = 0; $i < $res->rowCount(); $i++) {
                             $eachres = $res->fetch(PDO::FETCH_ASSOC);
                             if (strpos($eachres['SalName'], $text) !== false) {
-                                $image = base64_encode($eachres['image']);
-                                $resultText = $resultText . "<div class='card' name='" . $eachres['SID'] . "' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
-                                //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
+                                $SID = '"' . $eachres['SID'] . '"';
+                                $res2 = $db->query("select * from salAddress where SID = $SID");
+                                $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
                             }
                         }
 
@@ -58,32 +60,36 @@ if (!isset($_SESSION['CusID'])) {
                 } else if ($chosenFilter == "city") {
                     $res = $db->query("select * from saloon,saladdress where saladdress.City like '%$text%' and saloon.SID = saladdress.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
                     $count = $res->rowCount();
-                    echo "<script> alert('$count'); </script>";
+                    //echo "<script> alert('$count'); </script>";
                     if ($res->rowCount() == 0) {
                         $resultText = "لا يوجد نتائج";
                     } else {
                         for ($i = 0; $i < $res->rowCount(); $i++) {
                             $eachres = $res->fetch(PDO::FETCH_ASSOC);
                             if (strpos($eachres['City'], $text) !== false) {
-                                $image = base64_encode($eachres['image']);
-                                $resultText = $resultText . "<div class='card' name='" . $eachres['SID'] . "' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
-                                //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
+                                $SID = '"' . $eachres['SID'] . '"';
+                                $res2 = $db->query("select * from salAddress where SID = $SID");
+                                $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
                             }
                         }
                     }
                 } else if ($chosenFilter == "service") {
                     $res = $db->query("select * from saloon,services where services.service like '%$text%' and saloon.SID = services.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
                     $count = $res->rowCount();
-                    echo "<script> alert('$count'); </script>";
+                    //echo "<script> alert('$count'); </script>";
                     if ($res->rowCount() == 0) {
                         $resultText = "لا يوجد نتائج";
                     } else {
                         for ($i = 0; $i < $res->rowCount(); $i++) {
                             $eachres = $res->fetch(PDO::FETCH_ASSOC);
                             if (strpos($eachres['Service'], $text) !== false) {
-                                $image = base64_encode($eachres['image']);
-                                $resultText = $resultText . "<div class='card' name='" . $eachres['SID'] . "' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
-                                //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
+                                $SID = '"' . $eachres['SID'] . '"';
+                                $res2 = $db->query("select * from salAddress where SID = $SID");
+                                $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
                             }
                         }
                     }
@@ -153,7 +159,7 @@ function test_input($data)
                         d="M498.3,102v1.4l-4.9,14.2H379.3V105.1l3.2-3.1h69.2c-15.1-9.6-34.8-30.8-56.7-59.6l11.3-11.9h1.4c42.4,55,65.7,71.7,76.3,71.7Z"
                         style="fill:#3e3e3e"/></svg>
 </span></h1>
-    <form action="?" method="post">
+    <form action="customer-page.php" method="post">
         <div class="search_box">
             <div class="dropdown">
 
@@ -229,9 +235,11 @@ function test_input($data)
 
         <div id="dlg-footer1" class="dlg-footer">
             <input type="submit" name="logout" value="تسجيل الخروج">
-            <button onclick="dlgCancel1()">إلغاء</button>
         </div>
     </form>
+
+    <button onclick="dlgCancel1()">إلغاء</button>
+
 </div>
 <!--انتهاء ديالوج تسجيل الخروج-->
 <!--ديالوج الاعدادات -->
