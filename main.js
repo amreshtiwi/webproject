@@ -283,4 +283,32 @@ function dlgHide5() {
 //         }
 // }
 //*******************************************************************************************
+//for booking dlg
+function dlgCancelBooking() {
+    dlgBookinghide();
+}
 
+function dlgBooking() {
+    dlgBookinghide();
+    //window.location.replace("logIn.php");
+}
+
+function dlgBookinghide() {
+    var whitebg = document.getElementById("white-background");
+    var dlg = document.getElementById("dlgBookingBox");
+    whitebg.style.display = "none";
+    dlg.style.display = "none";
+}
+
+function showBookingDialog() {
+    var whitebg = document.getElementById("white-background");
+    var dlg = document.getElementById("dlgBookingBox");
+    whitebg.style.display = "block";
+    dlg.style.display = "block";
+
+    var winWidth = window.innerWidth;
+
+    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
+    dlg.style.top = "150px";
+
+}
