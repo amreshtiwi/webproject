@@ -27,80 +27,82 @@ if (!isset($_SESSION['CusID'])) {
         }
     }
     if (!empty($_POST)) {
-        if (isset($_POST['filter'])) {
-            $_SESSION['selection'] = $_POST['filter'];
-            $chosenFilter = $_POST['filter'];
-        }
-        if (isset($_POST['searchText'])) {
-            try {
-                $user = 'root';
-                $pass = '';
-                $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
-                $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $text = test_input($_POST['searchText']);
-                if ($chosenFilter == "saloon") {
-                    $res = $db->query("select * from saloon where SalName like '%$text%'");//order by SalName, case SalName when like $text then 1 else 2 end");
-                    if ($res->rowCount() == 0) {
-                        $resultText = "لا يوجد نتائج";
-                    } else {
 
+
+
+            if (isset($_POST['filter'])) {
+                $_SESSION['selection'] = $_POST['filter'];
+                $chosenFilter = $_POST['filter'];
+            }
+            if (isset($_POST['searchText'])) {
+                try {
+                    $user = 'root';
+                    $pass = '';
+                    $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
+                    $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $text = test_input($_POST['searchText']);
+                    if ($chosenFilter == "saloon") {
+                        $res = $db->query("select * from saloon where SalName like '%$text%'");//order by SalName, case SalName when like $text then 1 else 2 end");
+                        if ($res->rowCount() == 0) {
+                            $resultText = "لا يوجد نتائج";
+                        } else {
+
+                            $count = $res->rowCount();
+                            for ($i = 0; $i < $res->rowCount(); $i++) {
+                                $eachres = $res->fetch(PDO::FETCH_ASSOC);
+                                if (strpos($eachres['SalName'], $text) !== false) {
+                                    $SID = '"' . $eachres['SID'] . '"';
+                                    $res2 = $db->query("select * from salAddress where SID = $SID");
+                                    $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                    $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                                }
+                            }
+
+                        }
+                    } else if ($chosenFilter == "city") {
+                        $res = $db->query("select * from saloon,saladdress where saladdress.City like '%$text%' and saloon.SID = saladdress.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
                         $count = $res->rowCount();
-                        for ($i = 0; $i < $res->rowCount(); $i++) {
-                            $eachres = $res->fetch(PDO::FETCH_ASSOC);
-                            if (strpos($eachres['SalName'], $text) !== false) {
-                                $SID = '"' . $eachres['SID'] . '"';
-                                $res2 = $db->query("select * from salAddress where SID = $SID");
-                                $address = $res2->fetch(PDO::FETCH_ASSOC);
-                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                        //echo "<script> alert('$count'); </script>";
+                        if ($res->rowCount() == 0) {
+                            $resultText = "لا يوجد نتائج";
+                        } else {
+                            for ($i = 0; $i < $res->rowCount(); $i++) {
+                                $eachres = $res->fetch(PDO::FETCH_ASSOC);
+                                if (strpos($eachres['City'], $text) !== false) {
+                                    $SID = '"' . $eachres['SID'] . '"';
+                                    $res2 = $db->query("select * from salAddress where SID = $SID");
+                                    $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                    $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
                 <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                                }
                             }
                         }
+                    } else if ($chosenFilter == "service") {
+                        $res = $db->query("select * from saloon,services where services.service like '%$text%' and saloon.SID = services.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
+                        $count = $res->rowCount();
+                        //echo "<script> alert('$count'); </script>";
+                        if ($res->rowCount() == 0) {
+                            $resultText = "لا يوجد نتائج";
+                        } else {
+                            for ($i = 0; $i < $res->rowCount(); $i++) {
+                                $eachres = $res->fetch(PDO::FETCH_ASSOC);
+                                if (strpos($eachres['Service'], $text) !== false) {
+                                    $SID = '"' . $eachres['SID'] . '"';
+                                    $res2 = $db->query("select * from salAddress where SID = $SID");
+                                    $address = $res2->fetch(PDO::FETCH_ASSOC);
+                                    $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                                }
+                            }
+                        }
+                    }
+                } catch (PDOException $e) {
 
-                    }
-                } else if ($chosenFilter == "city") {
-                    $res = $db->query("select * from saloon,saladdress where saladdress.City like '%$text%' and saloon.SID = saladdress.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
-                    $count = $res->rowCount();
-                    //echo "<script> alert('$count'); </script>";
-                    if ($res->rowCount() == 0) {
-                        $resultText = "لا يوجد نتائج";
-                    } else {
-                        for ($i = 0; $i < $res->rowCount(); $i++) {
-                            $eachres = $res->fetch(PDO::FETCH_ASSOC);
-                            if (strpos($eachres['City'], $text) !== false) {
-                                $SID = '"' . $eachres['SID'] . '"';
-                                $res2 = $db->query("select * from salAddress where SID = $SID");
-                                $address = $res2->fetch(PDO::FETCH_ASSOC);
-                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
-                            }
-                        }
-                    }
-                } else if ($chosenFilter == "service") {
-                    $res = $db->query("select * from saloon,services where services.service like '%$text%' and saloon.SID = services.SID");//order by SalName, case SalName when like $text then 1 else 2 end");
-                    $count = $res->rowCount();
-                    //echo "<script> alert('$count'); </script>";
-                    if ($res->rowCount() == 0) {
-                        $resultText = "لا يوجد نتائج";
-                    } else {
-                        for ($i = 0; $i < $res->rowCount(); $i++) {
-                            $eachres = $res->fetch(PDO::FETCH_ASSOC);
-                            if (strpos($eachres['Service'], $text) !== false) {
-                                $SID = '"' . $eachres['SID'] . '"';
-                                $res2 = $db->query("select * from salAddress where SID = $SID");
-                                $address = $res2->fetch(PDO::FETCH_ASSOC);
-                                $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
-                            }
-                        }
-                    }
                 }
-            } catch (PDOException $e) {
-
             }
         }
-    }
 }
-
 if (isset($_POST['logout'])) {
     session_destroy();
     echo '<script> window.location.href = "index.php"; </script>';
@@ -181,6 +183,10 @@ function test_input($data)
 <!--ناف بار الي بالزاويه-->
 <div class="navbar">
     <ul>
+        <form method="post" action="customer-page.php?click=0">
+            <li><a><input type="submit" name="home" id="home" value=""><label for="home"><i
+                                class="fas fa-home"></i></label> </a></li>
+        </form>
         <li><a href="#" onclick="showDialog()"><i class="far fa-clock"></i></a></li>
         <li><a href="#" onclick="showDialog2()"><i class="fas fa-cog"></i></a></li>
         <li><a href="#" onclick="showDialog1()"><i class="fas fa-sign-out-alt"></i></a></li>
@@ -231,16 +237,14 @@ function test_input($data)
     </div>
 
 
-        <div id="dlg-body1" class="dlg-body">هل حقاً تود الخروج؟</div>
+    <div id="dlg-body1" class="dlg-body">هل حقاً تود الخروج؟</div>
 
-        <div id="dlg-footer1" class="dlg-footer">
-            <form action="?" method="post">
+    <div id="dlg-footer1" class="dlg-footer">
+        <form action="?" method="post">
             <input type="submit" name="logout" value="تسجيل الخروج">
-            </form>
-            <button onclick="dlgCancel1()">إلغاء</button>
-        </div>
-
-
+        </form>
+        <button onclick="dlgCancel1()">إلغاء</button>
+    </div>
 
 
 </div>
