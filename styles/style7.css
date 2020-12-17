@@ -16,7 +16,7 @@ body{
 .header svg{
     position: relative;
     top: 15px;
-    right: 10px;
+    right: 48%;
     height: 50px;
 }
 .search_box {
@@ -104,4 +104,11 @@ body{
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #2e2e2e;
+}
+.head-title{
+    font-size: 36px;
+    font-family: 'Lalezar', cursive;
+    color: #2e2e2e;
+    text-align: center;
+    background: #bc8500;
 }

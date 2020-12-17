@@ -81,13 +81,13 @@ if (!isset($_GET['ID'])) {
               style="fill:#3e3e3e"/>
     </svg>
 
-    <div class="search_box">
-
-        <div class="search_field">
-            <input type="text" class="input" placeholder="إبحث عن صالونك المفضل">
-            <i class="fas fa-search"></i>
-        </div>
-    </div>
+<!--    <div class="search_box">-->
+<!---->
+<!--        <div class="search_field">-->
+<!--            <input type="text" class="input" placeholder="إبحث عن صالونك المفضل">-->
+<!--            <i class="fas fa-search"></i>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <div class="table-div">
     <table class="styled-table">

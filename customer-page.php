@@ -149,6 +149,9 @@ function test_input($data)
     </script>
 </head>
 <body>
+<div class="na-welcome">
+<h1>أهلاً يا سيد كستومر</h1>
+</div>
 <div class="header">
     <h1>أهلاً وسهلاً بك في<span><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 498.3 158.6"><title>halaqee4</title><path

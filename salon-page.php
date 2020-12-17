@@ -66,6 +66,7 @@ if(isset($_POST['logout'])){
     </div>
     <!--انتهاء الناف بار-->
     <div id="white-background"></div>
+</div>
     <!--ديالوج الاعدادات -->
     <div id="dlgbox2" class="dlgbox">
         <div id="dlg-header2" class="dlg-header">
@@ -236,7 +237,7 @@ if(isset($_POST['logout'])){
         </div>
     </div>
     <!--إنتهاء ديالوج حذف الحساب -->
-</div>
+<!--</div>-->
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

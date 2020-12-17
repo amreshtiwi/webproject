@@ -76,7 +76,7 @@ if (!isset($_GET['ID'])) {
               style="fill:#3e3e3e"/>
     </svg>
 </div>
-<h1>مجموع العائدات من الخدمات المختلفة</h1>
+<h1 class="head-title">مجموع العائدات من الخدمات المختلفة</h1>
 <div class="chart">
     <canvas id="myChart"
             style=" width:700px; height:290px;"

@@ -127,6 +127,12 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
         </form>
     </div>
 </div>
+<script>
+    (function(){
+    document.getElementById("emailDiv").classList.remove('focus');
+    document.getElementById("passDiv").classList.remove('focus');
+    })()
+</script>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
