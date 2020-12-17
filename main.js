@@ -300,6 +300,11 @@ function dlgBookinghide() {
     dlg.style.display = "none";
 }
 
+function test(card_id){
+    alert(card_id);
+
+}
+
 function showBookingDialog() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgBookingBox");

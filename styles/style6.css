@@ -324,6 +324,13 @@ svg{
     border: 0;
 }
 
+.dlg-footer input{
+    background-color: #8b8b8b;
+    color: #2e2e2e;
+    padding: 5px;
+    border: 0;
+}
+
 
 /*.navbar1{*/
 /*    position: fixed;*/

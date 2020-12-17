@@ -6,13 +6,13 @@
 })()
 
 function gohome(){
-    window.location.href = "salon-page.html";
+    window.location.href = "salon-page.php";
 }
 function gonext(){
     window.location.href = "dayBooking.html";
 }
 function gonext1(){
-    window.location.href = "historyBooking.html";
+    window.location.href = "historyBooking.html?";
 }
 function gonext2(){
     window.location.href = "percantgePage.html";

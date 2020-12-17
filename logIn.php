@@ -35,9 +35,11 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
         if ($loginFlag == 1) {
             $_SESSION['UserID'] = $ID;
             if ($type == 'C') {
-                echo '<script> window.location.href = "customer-page.php"; </script>';
+                $_SESSION['CusID'] = 1;
+                echo '<script> window.location.href = "customer-page.php?click=0"; </script>';
             } else {
-                echo '<script> window.location.href = "saloon-page.html"; </script>';
+                $_SESSION['SalID'] = 1;
+                echo '<script> window.location.href = "salon-page.php"; </script>';
             }
         } else {
             $_SESSION['LoginErrorMsg'] = "البريد الالكتروني او كلمة المرور غير صحيحة";
