@@ -122,26 +122,31 @@ if (isset($_POST['Page1'])) {
         // echo '<script type="text/javascript" src="main3.js"></script>';
         echo '<script> window.location.href = "signup-salon1.php?click=1"; </script>';
     }
-}
-elseif (isset($_POST['Page3'])) {
+} elseif (isset($_POST['Page3'])) {
     $image = $start = $end = "";
     $Days = "";
     $services = "";
+    $target = "";
     if (isset($_POST['start']) && isset($_POST['end']) && !empty($_POST['Days']) && !empty($_POST['Services'])) {
-        if (isset($_POST['photo'])) {
-            $image = $_POST['photo'];
-        } else {
-            $image = null;
+        $image = $_FILES['photo']['name'];
+        if (is_uploaded_file($_FILES['photo']['tmp_name'])) {
+            $ext = pathinfo($image, PATHINFO_EXTENSION);
+            $image_name = $_SESSION['SID'].'.'.$ext;
+            $target = "./images/" . $image_name;
+            if (!move_uploaded_file($_FILES['photo']['tmp_name'], $target)) {
+                $_SESSION['Image'] = null;
+
+            }else {
+                $_SESSION['Image'] = $image_name;
+            }
+        }else {
+            $_SESSION['Image'] = null;
         }
         $start = $_POST['start'];
         $end = $_POST['end'];
         $Days = DaysParse($_POST['Days']);
         $services = SerParse($_POST['Services']);
         setValPage3();
-        if (is_null($image))
-            $_SESSION['Image'] = null;
-        else
-            $_SESSION['Image'] = $image;
         echo '<script> window.location.href = "ServicesPricesMale.php"; </script>';
     } else {
         if (empty($_POST['Days'])) {
@@ -168,20 +173,27 @@ elseif (isset($_POST['Page4'])) {
     $Days = "";
     $services = "";
     if (isset($_POST['start']) && isset($_POST['end']) && !empty($_POST['Days']) && !empty($_POST['Services'])) {
-        if (isset($_POST['photo'])) {
-            $image = $_POST['photo'];
-        } else {
-            $image = null;
+        $image = $_FILES['photo']['name'];
+        if (is_uploaded_file($_FILES['photo']['tmp_name'])) {
+            $ext = pathinfo($image, PATHINFO_EXTENSION);
+            $image_name = $_SESSION['SID'].'.'.$ext;
+            $target = "./images/" . $image_name;
+            if (!move_uploaded_file($_FILES['photo']['tmp_name'], $target)) {
+                $_SESSION['Image'] = null;
+                echo "<script>alert('Hi');</script>";
+
+            }else {
+                $_SESSION['Image'] = $image_name;
+            }
+        }else {
+            $_SESSION['Image'] = null;
+            echo "<script>alert('Hello');</script>";
         }
         $start = $_POST['start'];
         $end = $_POST['end'];
         $Days = DaysParse($_POST['Days']);
         $services = SerParse1($_POST['Services']);
         setValPage4();
-        if (is_null($image))
-            $_SESSION['Image'] = null;
-        else
-            $_SESSION['Image'] = $image;
         echo '<script> window.location.href = "ServicePricesFemale.php"; </script>';
     } else {
         if (empty($_POST['Days'])) {
@@ -516,11 +528,6 @@ function setValPage2()
 
 function setValPage3()
 {
-    if (isset($_POST['photo'])) {
-        $_SESSION['Image'] = $_POST['photo'];
-    } else {
-        $_SESSION['Image'] = "";
-    }
     if ($_POST['start'] != "") {
         $_SESSION['start'] = $_POST['start'];
     }
@@ -534,11 +541,7 @@ function setValPage3()
 
 function setValPage4()
 {
-    if (isset($_POST['photo'])) {
-        $_SESSION['Image'] = $_POST['photo'];
-    } else {
-        $_SESSION['Image'] = "";
-    }
+
     if ($_POST['start'] != "") {
         $_SESSION['start'] = $_POST['start'];
     }
@@ -696,7 +699,6 @@ function InsertSalTable()
         $pass = '';
         $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
         $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "insert into saloon values('" . $SID . "', '" . $phone . "', '" . $SalName . "',  '" . $Gender . "', '" . $webpage . "', '" . $image . "', '" . $email . "', '" . sha1($password) . "')";
         $result = $db->query($query);
         if (!$result) {
@@ -767,7 +769,7 @@ function InsertSalTable()
                     $query = "insert into workhours values('" . $SID . "', 'جمعة', '" . $start . "','" . $end . "')";
                     $result = $db->query($query);
                 }
-                $query = "insert into login values('" . $email . "', '".sha1($password)."', '" . $SID . "', 'S')";
+                $query = "insert into login values('" . $email . "', '" . sha1($password) . "', '" . $SID . "', 'S')";
                 $result = $db->query($query);
                 echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
                 echo '<script> window.location.href = "index.php"; </script>';
@@ -808,7 +810,6 @@ function InsertSalTable1()
         $pass = '';
         $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
         $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         $query = "insert into saloon values('" . $SID . "', '" . $phone . "', '" . $SalName . "',  '" . $Gender . "', '" . $webpage . "', '" . $image . "', '" . $email . "', '" . sha1($password) . "')";
         $result = $db->query($query);
         if (!$result) {
@@ -915,7 +916,7 @@ function InsertSalTable1()
                     $query = "insert into workhours values('" . $SID . "', 'جمعة', '" . $start . "','" . $end . "')";
                     $result = $db->query($query);
                 }
-                $query = "insert into login values('" . $email . "', '".sha1($password)."', '" . $SID . "', 'S')";
+                $query = "insert into login values('" . $email . "', '" . sha1($password) . "', '" . $SID . "', 'S')";
                 $result = $db->query($query);
                 echo '<script>alert("تم انشاء الحساب بنجاح!")</script>';
                 echo '<script> window.location.href = "index.php"; </script>';
@@ -943,5 +944,3 @@ function test_input($data)
     return $data;
 }
 
-//echo '<script> window.location.href = "signup-salon.php"; </script>';
-?>

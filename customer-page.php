@@ -3,6 +3,23 @@ session_start();
 $_SESSION['selection'] = "saloon";
 $chosenFilter = $_SESSION['selection'];
 $resultText = "";
+if (isset($_GET['click'])) {
+    try {
+        $user = 'root';
+        $pass = '';
+        $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
+        $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $res = $db->query("select * from saloon,salAddress where saloon.SID = salAddress.SID");
+        $count = $res->rowCount();
+        for ($i = 0; $i < $count; $i++) {
+            $eachres = $res->fetch(PDO::FETCH_ASSOC);
+                $image = base64_encode($eachres['image']);
+                $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='images/".$eachres['image']."' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
+                //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
+        }
+    } catch (Exception $exception) {
+    }
+}
 if (!empty($_POST)) {
     if (isset($_POST['filter'])) {
         $_SESSION['selection'] = $_POST['filter'];
@@ -25,8 +42,8 @@ if (!empty($_POST)) {
                     for ($i = 0; $i < $res->rowCount(); $i++) {
                         $eachres = $res->fetch(PDO::FETCH_ASSOC);
                         if (strpos($eachres['SalName'], $text) !== false) {
-                            $image = base64_encode( $eachres['image']);
-                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image  . " ' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] ."</p>  </div> </div>";
+                            $image = base64_encode($eachres['image']);
+                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/><div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
                             //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
                         }
                     }
@@ -42,8 +59,8 @@ if (!empty($_POST)) {
                     for ($i = 0; $i < $res->rowCount(); $i++) {
                         $eachres = $res->fetch(PDO::FETCH_ASSOC);
                         if (strpos($eachres['City'], $text) !== false) {
-                            $image = base64_encode( $eachres['image']);
-                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image  . " ' style='width:100%'/> <p> " . $eachres['SalName'] . "<br>  " . $eachres['PhoneNum'] ."</p></div> </div>";
+                            $image = base64_encode($eachres['image']);
+                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'><img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/> <p> " . $eachres['SalName'] . "<br>  " . $eachres['PhoneNum'] . "</p></div> </div>";
                             //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
                         }
                     }
@@ -58,8 +75,8 @@ if (!empty($_POST)) {
                     for ($i = 0; $i < $res->rowCount(); $i++) {
                         $eachres = $res->fetch(PDO::FETCH_ASSOC);
                         if (strpos($eachres['Service'], $text) !== false) {
-                            $image = base64_encode( $eachres['image']);
-                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'> <img src='data:image/jpeg;base64," . $image  . " ' style='width:100%'/><p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] ."</p>  </div> </div>";
+                            $image = base64_encode($eachres['image']);
+                            $resultText = $resultText . "<div class='card' onclick='showBookingDialog()'> <img src='data:image/jpeg;base64," . $image . " ' style='width:100%'/><p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "</p>  </div> </div>";
                             //$resultText = $resultText . $eachres['SalName'] . " " . $eachres['PhoneNum'] . "<br>";
                         }
                     }
@@ -135,10 +152,10 @@ function test_input($data)
                 </select>
             </div>
 
-        <div class="search_field">
-            <input type="text" name="searchText" id="searchText" class="input" placeholder="ابحث عن صالونك المفضل">
-            <i class="fas fa-search"></i>
-        </div>
+            <div class="search_field">
+                <input type="text" name="searchText" id="searchText" class="input" placeholder="ابحث عن صالونك المفضل">
+                <i class="fas fa-search"></i>
+            </div>
         </div>
     </form>
 </div>
@@ -377,12 +394,12 @@ function test_input($data)
         <select id="selectday" class="select">
             <option disabled selected>اليوم</option>
             <option>الأحد</option>
-            <option >الإثنين</option>
-            <option >الثلاثاء</option>
-            <option >الأربعاء</option>
-            <option >الخميس</option>
-            <option >الجمعه</option>
-            <option >السبت</option>
+            <option>الإثنين</option>
+            <option>الثلاثاء</option>
+            <option>الأربعاء</option>
+            <option>الخميس</option>
+            <option>الجمعه</option>
+            <option>السبت</option>
         </select>
         <br>
         <label for="selecttime">ماذا عن الوقت؟</label>
@@ -397,15 +414,15 @@ function test_input($data)
 </div>
 <!--انتهاء ديالوج حجز الوقت-->
 <div class="wrap">
-<!--    start-->
-<!--    <div class="card" onclick="showBookingDialog()">-->
-<!--        <img src="imgs/img1.jpg" alt="Avatar" >-->
-<!--        <div class="container">-->
-<!--            <h4><b>عمرو شتيوي</b></h4>-->
-<!--            <p>هندسة حاسوب</p>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--      start-->
+    <!--    start-->
+    <!--    <div class="card" onclick="showBookingDialog()">-->
+    <!--        <img src="imgs/img1.jpg" alt="Avatar" >-->
+    <!--        <div class="container">-->
+    <!--            <h4><b>عمرو شتيوي</b></h4>-->
+    <!--            <p>هندسة حاسوب</p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--      start-->
     <?php echo $resultText; ?>
 </div>
 <script type="text/javascript" src="main.js"></script>
