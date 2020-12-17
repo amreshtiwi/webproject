@@ -8,14 +8,14 @@
 function gohome(){
     window.location.href = "salon-page.php";
 }
-function gonext(){
-    window.location.href = "dayBooking.html";
+function gonext(ID){
+    window.location.href = "dayBooking.php?ID="+ID;
 }
-function gonext1(){
-    window.location.href = "historyBooking.html?";
+function gonext1(ID){
+    window.location.href = "historyBooking.php?ID="+ID;
 }
-function gonext2(){
-    window.location.href = "percantgePage.html";
+function gonext2(ID){
+    window.location.href = "percantgePage.php?ID="+ID;
 }
 // (function(){
 //

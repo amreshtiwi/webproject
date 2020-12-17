@@ -42,15 +42,15 @@ if(isset($_POST['logout'])){
 </div>
 <div class="wrap">
     <div class="choices">
-        <div onclick="gonext()" class="choice1">
+        <div onclick="gonext('<?php echo $ID ?>')" class="choice1">
             <i class="fas fa-calendar-day"></i>
             <div class="active"><h1>حجوزات اليوم</h1></div>
         </div>
-        <div onclick="gonext1()" class="choice2">
+        <div onclick="gonext1('<?php echo $ID ?>')" class="choice2">
             <i class="fas fa-history"></i>
             <div class="active"><h1>السجل</h1></div>
         </div>
-        <div onclick="gonext2()" class="choice3">
+        <div onclick="gonext2('<?php echo $ID ?>')" class="choice3">
             <i class="fas fa-percentage"></i>
             <div class="active"><h1>نسبة المبيعات</h1></div>
         </div>

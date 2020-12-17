@@ -1,3 +1,56 @@
+<?php
+$tableRes = "";
+if (!isset($_GET['ID'])) {
+    echo '<script> window.location.href = "index.php"; </script>';
+} else {
+    $ID = $_GET['ID'];
+    //echo '<script>alert("'.$ID.'")</script>';
+    try {
+        $user = 'root';
+        $pass = '';
+        $db = new PDO('mysql:host=localhost;dbname=halaqi', $user, $pass);
+        $db->SetAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $res = $db->query("select * from bookings where  SID = '$ID' and Date = '". date("Y-m-d")."'");
+        $count = $res->rowCount();
+        for ($i = 0; $i < $count; $i++) {
+            $each = $res->fetch(PDO::FETCH_ASSOC);
+            $res2 = $db->query("select Price from services where SID = '$ID' and service = '" . $each['Service'] . "'");
+            $serInfo = $res2->fetch(PDO::FETCH_ASSOC);
+            $price = $serInfo['Price'];
+            $res3 = $db->query("select * from customerfullname where CID = '". $each['CID'] ."'");
+            $Name = $res3->fetch(PDO::FETCH_ASSOC);
+            $CustName = $Name['FirstName'] . " " . $Name['LastName'];
+            $res4 = $db->query("select * from customer where CID = '". $each['CID'] ."'");
+            $CustInfo = $res4->fetch(PDO::FETCH_ASSOC);
+            $CustPhone = $CustInfo['PhoneNum'];
+            $ser = $each['Service'];
+            $date = $each['Date'];
+            // $count2 = $res2->rowCount();
+            // echo '<script>alert("'.$count2.'")</script>';
+            if($i%2 == 0){
+                $tableRes = $tableRes . "<tr>
+            <td>$CustName</td>
+            <td>$CustPhone</td>
+            <td>$ser</td>
+            <td>$date</td>
+            <td>$price</td>
+        </tr>";
+            }else{
+                $tableRes = $tableRes . "<tr class='active-row'>
+            <td>$CustName</td>
+            <td>$CustPhone</td>
+            <td>$ser</td>
+            <td>$date</td>
+            <td>$price</td>
+        </tr>";
+            }
+        }
+        // echo '<script>alert("'.$count.'")</script>';
+    } catch (Exception $exception) {
+
+    }
+}
+?>
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
@@ -39,20 +92,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>عمرو</td>
-            <td>0595141904</td>
-            <td>قص شعر</td>
-            <td>12:30</td>
-            <td>20</td>
-        </tr>
-        <tr class="active-row">
-            <td>عمرو</td>
-            <td>0595141904</td>
-            <td>قص شعر</td>
-            <td>12:30</td>
-            <td>20</td>
-        </tr>
+        <?php echo $tableRes; ?>
         <!-- and so on... -->
         </tbody>
     </table>
