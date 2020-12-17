@@ -25,6 +25,7 @@ if (!isset($_GET['ID'])) {
             $CustPhone = $CustInfo['PhoneNum'];
             $ser = $each['Service'];
             $date = $each['Date'];
+            $time = $each['BookTime'];
             // $count2 = $res2->rowCount();
             // echo '<script>alert("'.$count2.'")</script>';
             if($i%2 == 0){
@@ -32,7 +33,7 @@ if (!isset($_GET['ID'])) {
             <td>$CustName</td>
             <td>$CustPhone</td>
             <td>$ser</td>
-            <td>$date</td>
+            <td>$time</td>
             <td>$price</td>
         </tr>";
             }else{
@@ -40,7 +41,7 @@ if (!isset($_GET['ID'])) {
             <td>$CustName</td>
             <td>$CustPhone</td>
             <td>$ser</td>
-            <td>$date</td>
+            <td>$time</td>
             <td>$price</td>
         </tr>";
             }
@@ -87,7 +88,7 @@ if (!isset($_GET['ID'])) {
             <th>إسم العميل</th>
             <th>رقم العميل</th>
             <th>نوع الخدمه</th>
-            <th>موعد الحجز</th>
+            <th>ساعة الحجز</th>
             <th>المبلغ الطلوب للدفع</th>
         </tr>
         </thead>

@@ -56,6 +56,8 @@ if (!isset($_GET['ID'])) {
             width: 100%;
             height: 500px;
             margin-top: 5%;
+            padding-left: 3%;
+            padding-right: 3%;
         }
     </style>
 </head>
