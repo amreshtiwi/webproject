@@ -25,10 +25,10 @@ $mail->Subject = 'WebSite Msg from ' . $Client;
 $mail->Body = $body;
 
 if (!$mail->send()) {
-    echo '<script> alert("Email Failed")</script>';
+    echo '<script> alert("حدث خطأ أثناء ارسال البريد.")</script>';
     echo '<script> alert("' . $mail->ErrorInfo . '")</script>';
 } else {
-    echo '<script> alert("Email Sent Successfully")</script>';
+    echo '<script> alert("تم ارسال البريد بنجاح")</script>';
     echo '<script> window.location.href = "index.php"; </script>';
 }
 
