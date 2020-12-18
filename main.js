@@ -202,11 +202,45 @@ function changePassDialog() {
 
 //show information data dialog
 
+
+//get info from DB
 function infoDialog() {
+    var dataForm = new FormData();
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("infodia").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "getInfoCustomer.php", true);
+    xhttp.send(dataForm);
+
     dlgHide2();
     showDialog4();
 }
 
+function infoDialog1(){
+    var dataForm = new FormData();
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("InfoSaloon").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "getInfoSaloon.php", true);
+    xhttp.send(dataForm);
+
+    dlgHide2();
+    showDialog4();
+}
 function showDialog4() {
     var whitebg = document.getElementById("white-background");
     var dlg = document.getElementById("dlgbox4");
@@ -224,8 +258,28 @@ function dlgCancel4() {
     dlgHide4();
 }
 
+//edit info
 function dlgOK4() {
-    dlgHide4();
+    var email = document.getElementById('emalDiv').value;
+    var phone = document.getElementById('phonediv').value;
+    var dataForm = new FormData();
+
+    dataForm.append('email', email);
+    dataForm.append('phone', phone);
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("editResult").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "editInfoCustomer.php", true);
+    xhttp.send(dataForm);
+   // dlgHide4();
     //implement code to save data
 }
 
@@ -434,4 +488,30 @@ function getPrice(SID){
     xhttp.open("POST", "getPrice.php", true);
     xhttp.send(dataForm);
 
+}
+
+function dlgOK6(){
+    var email = document.getElementById('emalDiv1').value;
+    var phone = document.getElementById('phonediv1').value;
+    var name =  document.getElementById('NameId1').value;
+    var site =  document.getElementById('WebId1').value;
+    var dataForm = new FormData();
+
+    dataForm.append('email', email);
+    dataForm.append('phone', phone);
+    dataForm.append('name', name);
+    dataForm.append('site', site);
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("editResultS").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "editInfoSaloon.php", true);
+    xhttp.send(dataForm);
 }

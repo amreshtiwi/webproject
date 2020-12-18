@@ -27,7 +27,7 @@ if (!isset($_SESSION['CusID'])) {
                 $res2 = $db->query("select * from salAddress where SID = $SID");
                 $address = $res2->fetch(PDO::FETCH_ASSOC);
                 $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City']  . "<br>" . $eachres['WebPage'] ."</p>  </div> </div>";
             }
         }
     }
@@ -59,7 +59,7 @@ if (!isset($_SESSION['CusID'])) {
                                 $res2 = $db->query("select * from salAddress where SID = $SID");
                                 $address = $res2->fetch(PDO::FETCH_ASSOC);
                                 $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City']  . "<br>" . $eachres['WebPage'] ."</p>  </div> </div>";
                             }
                         }
 
@@ -78,7 +78,7 @@ if (!isset($_SESSION['CusID'])) {
                                 $res2 = $db->query("select * from salAddress where SID = $SID");
                                 $address = $res2->fetch(PDO::FETCH_ASSOC);
                                 $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City']  . "<br>" . $eachres['WebPage'] ."</p>  </div> </div>";
                             }
                         }
                     }
@@ -96,7 +96,7 @@ if (!isset($_SESSION['CusID'])) {
                                 $res2 = $db->query("select * from salAddress where SID = $SID");
                                 $address = $res2->fetch(PDO::FETCH_ASSOC);
                                 $resultText = $resultText . "<div class='card' onclick='showBookingDialog($SID)'><img src='images/" . $eachres['image'] . "' style='width:100%'/>
-                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City'] . "</p>  </div> </div>";
+                <div class='container'> <p> " . $eachres['SalName'] . " <br> " . $eachres['PhoneNum'] . "<br>" . $address['Street'] . " - " . $address['City']  . "<br>" . $eachres['WebPage'] ."</p>  </div> </div>";
                             }
                         }
                     }
@@ -379,49 +379,16 @@ function test_input($data)
         </svg>
     </div>
 
-    <div class="dlg-body">
-        <div class="login-content">
+    <div id="infodia" class="dlg-body">
 
-                <div id="nameDiv" class="input-div one focus ">
-                    <div class="i">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <h5>الإسم</h5>
-                        <input id="NameId" class="input1" type="text" name="nameDiv"
-                            required style="background: none; outline: none; border: none; position: relative; top: -5px;">
-                    </div>
-                </div>
-
-                <div id="emailDiv" class="input-div two focus">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5 class="mar">البريد الإلكتروني</h5>
-                        <input id="emalDiv" class="input1" type="text" name="emailDiv"
-                               required style="background: none; outline: none; border: none; position: relative;top: -5px;">
-                    </div>
-                </div>
-
-                <div id="PhoneDiv" class="input-div two focus">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h5 class="mar">رقم الهاتف</h5>
-                        <input id="phonediv" class="input1" type="text" name="phoneDiv"
-                               required style="background: none; outline: none; border: none; position: relative;top: -5px;">
-                    </div>
-                </div>
-
-        </div>
     </div>
 
     <div class="dlg-footer">
         <button onclick="dlgOK4()">حسناً</button>
         <button onclick="dlgCancel4()">إلغاء</button>
     </div>
+    <div id="editResult"></div>
+
 </div>
 <!--انتهاء ديالوج البيانات -->
 

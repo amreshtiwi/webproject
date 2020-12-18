@@ -24,6 +24,12 @@ if (isset($_POST['email'], $_POST['phone'])) {
                     ':email'=> $email,
                     ':num'=>$phone
                 ));
+                $sql = 'update login set Email=:email where ID=:CID';
+                $serviceResult = $db->prepare($sql);
+                $serviceResult->execute(array(
+                    ':CID' => $CID,
+                    ':email'=> $email,
+                ));
                 echo '<span style="color: darkred">تم تحديث البيانات بنجاح</span>';
             }
         }
