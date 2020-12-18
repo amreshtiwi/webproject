@@ -560,6 +560,7 @@ svg{
 
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #bcbcbc;
+    color: #2e2e2e;
 }
 
 .styled-table tbody tr:last-of-type {

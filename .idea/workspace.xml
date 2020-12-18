@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3606e630-ba28-46a7-bb5a-ae9e019d684b" name="Default Changelist" comment="make the scrol bar">
-      <change beforePath="$PROJECT_DIR$/getInfoCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/getInfoCustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getInfoSaloon.php" beforeDir="false" afterPath="$PROJECT_DIR$/getInfoSaloon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style3.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
