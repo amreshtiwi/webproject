@@ -105,6 +105,7 @@ body{
     display: flex;
     justify-content: space-evenly;
 }
+
 .flip-card {
     width: 250px;
     height: 250px;
@@ -151,11 +152,13 @@ body{
 .flip-card-back h1{
     color: #2e2e2e;
     font-size: 48px;
+    font-family: 'Lalezar', cursive;
 }
 
 .flip-card-back p{
     color: #2e2e2e;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: 'Lalezar', cursive;
 }
 /*end cards*/
 /*footer in insex*/
