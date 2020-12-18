@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="dcdf102b-7066-4796-a467-5c149dc256c4" name="xamp" url="http://localhost/Web2020/webproject">
+      <webServer id="dcdf102b-7066-4796-a467-5c149dc256c4" name="xamp" url="http://localhost/pro">
         <fileTransfer accessType="LOCAL" port="0" />
       </webServer>
     </option>

@@ -95,7 +95,7 @@ if(isset($_POST['logout'])){
                 <ul>
                     <li><a href="#" onclick="changePassDialog()">تغير كلمة المرور </i></a></li>
                     <li><a href="#" onclick="infoDialog()">البيانات الشخصيه</a></li>
-                    <li><a href="#" onclick="deleteDialog()">حذف حساب</a></li>
+<!--                    <li><a href="#" onclick="deleteDialog()">حذف حساب</a></li>-->
                 </ul>
 
             </div>
@@ -103,7 +103,7 @@ if(isset($_POST['logout'])){
 
         <div id="dlg-footer2" class="dlg-footer">
             <button onclick="dlgOK2()">حسناً</button>
-            <button onclick="dlgCancel2()">إلغاء</button>
+<!--            <button onclick="dlgCancel2()">إلغاء</button>-->
         </div>
     </div>
     <!--انتهاء ديالوج الاعدادات-->
@@ -206,11 +206,57 @@ if(isset($_POST['logout'])){
         </div>
 
         <div class="dlg-body">
+            <div class="login-content">
 
+                <div id="nameDiv1" class="input-div one focus ">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h5>إسم الصالون</h5>
+                        <input id="NameId1" class="input1" type="text" name="nameDiv1"
+                               required style="background: none; outline: none; border: none; position: relative; top: -5px;">
+                    </div>
+                </div>
+
+                <div id="webDiv1" class="input-div one focus ">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h5>صفحة التواصل الإجتماعي</h5>
+                        <input id="WebId1" class="input1" type="text" name="WebDiv1"
+                               required style="background: none; outline: none; border: none; position: relative; top: -5px;">
+                    </div>
+                </div>
+
+                <div id="emailDiv1" class="input-div two focus">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5 class="mar">البريد الإلكتروني</h5>
+                        <input id="emalDiv1" class="input1" type="text" name="emailDiv1"
+                               required style="background: none; outline: none; border: none; position: relative;top: -5px;">
+                    </div>
+                </div>
+
+                <div id="PhoneDiv1" class="input-div two focus">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h5 class="mar">رقم الهاتف</h5>
+                        <input id="phonediv1" class="input1" type="text" name="phoneDiv1"
+                               required style="background: none; outline: none; border: none; position: relative;top: -5px;">
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="dlg-footer">
-            <button onclick="dlgOK4()">حسناً</button>
+            <button onclick="dlgOK6()">حسناً</button>
             <button onclick="dlgCancel4()">إلغاء</button>
         </div>
     </div>

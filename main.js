@@ -118,7 +118,6 @@ function dlgCancel2() {
 
 function dlgOK2() {
     dlgHide2();
-    window.location.replace("logIn.php");
 }
 
 function dlgHide2() {
