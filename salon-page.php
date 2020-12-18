@@ -24,6 +24,13 @@ if(isset($_POST['logout'])){
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/45aa54fd2a.js" crossorigin="anonymous"></script>
     <script src="main2.js"></script>
+    <script>
+        function dlgOK5(ID) {
+            dlgHide5();
+            //implement code to save data
+            window.location.href = "deleteAcc.php?ID="+ID;
+        }
+    </script>
 </head>
 <body>
 <div class="header">
@@ -142,7 +149,7 @@ if(isset($_POST['logout'])){
         </div>
 
         <div class="dlg-body">
-            <form action="logIn.php" method="post">
+            <form action="changePass.php" method="post">
 
                 <div id="emailDiv" class="input-div one focus ">
                     <div class="i">
@@ -232,7 +239,7 @@ if(isset($_POST['logout'])){
         </div>
 
         <div class="dlg-footer">
-            <button class="delete_account" onclick="dlgOK5()">حذف حسابي</button>
+            <button class="delete_account" onclick="dlgOK5('<?php echo $ID; ?>')"">حذف حسابي</button>
             <button onclick="dlgCancel5()">إلغاء</button>
         </div>
     </div>

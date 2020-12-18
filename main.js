@@ -20,9 +20,10 @@ inputs.forEach(input => {
 });
 
 function goindex() {
-    window.location.href="index.php";
+    window.location.href = "index.php";
 }
-function goback(){
+
+function goback() {
     window.history.back();
 }
 
@@ -50,15 +51,33 @@ function dlgHide() {
 }
 
 function showDialog() {
-    var whitebg = document.getElementById("white-background");
-    var dlg = document.getElementById("dlgbox");
-    whitebg.style.display = "block";
-    dlg.style.display = "block";
+    // var whitebg = document.getElementById("white-background");
+    // var dlg = document.getElementById("dlgbox");
+    // whitebg.style.display = "block";
+    // dlg.style.display = "block";
+    //
+    // var winWidth = window.innerWidth;
+    //
+    // dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
+    // dlg.style.top = "150px";
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("dlg-body").innerHTML = this.responseText;
+            var whitebg = document.getElementById("white-background");
+            var dlg = document.getElementById("dlgbox");
+            whitebg.style.display = "block";
+            dlg.style.display = "block";
 
-    var winWidth = window.innerWidth;
+            var winWidth = window.innerWidth;
 
-    dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
-    dlg.style.top = "150px";
+            dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
+            dlg.style.top = "150px";
+        }
+    };
+    xhttp.open("POST", "cusHistory.php", true);
+    xhttp.send();
+
 }
 
 // for the log out button in customer page
@@ -222,10 +241,6 @@ function dlgCancel5() {
     dlgHide5();
 }
 
-function dlgOK5() {
-    dlgHide5();
-    //implement code to save data
-}
 
 function dlgHide5() {
     var whitebg = document.getElementById("white-background");
@@ -270,8 +285,30 @@ function dlgCancelBooking() {
     dlgBookinghide();
 }
 
-function dlgBooking() {
-    dlgBookinghide();
+function dlgBooking(SID) {
+
+    var day = document.getElementById('selectday').value;
+    var service = document.getElementById('selectServ').value;
+    var time = document.getElementById('selecttime').value;
+    var dataForm = new FormData();
+
+    dataForm.append('day', day);
+    dataForm.append('service', service);
+    dataForm.append('time', time);
+    dataForm.append('SID',SID);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("bookResult").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "AddBooking.php", true);
+    xhttp.send(dataForm);
+
     //window.location.replace("logIn.php");
 }
 
@@ -289,44 +326,47 @@ function dlgBookinghide() {
 function showBookingDialog(SID) {
 
     var dataFrom = new FormData();
-    dataFrom.append('SID',SID);
+    dataFrom.append('SID', SID);
 
 
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             // document.getElementById("demo").innerHTML = this.responseText;
-            var selectServMenu= document.getElementById('selectServ');
-            var obj = JSON.parse(this.responseText);
+            // var selectServMenu = document.getElementById('selectServ');
+            // var obj = this.responseText
+            document.getElementById('dlgBookingBox').innerHTML = this.responseText;
+            // console.log(obj);
 
             //remove old options
-            var select = document.getElementById("selectServ");
-            var length = select.options.length;
-            for (i = length-1; i >= 0; i--) {
-                select.options[i] = null;
-            }
+            // var select = document.getElementById("selectServ");
+            // var length = select.options.length;
+            // for (i = length - 1; i >= 0; i--) {
+            //     select.options[i] = null;
+            // }
+            //
+            // var option = document.createElement("option");
+            // option.text = "خدمة";
+            // selectServMenu.add(option);
+            // for (var i = 0; i < obj.length; i++) {
+            //     var option = document.createElement("option");
+            //     var innerOBJ = obj[i];
+            //     option.text = innerOBJ['service'];
+            //     selectServMenu.add(option);
+            //
+            var whitebg = document.getElementById("white-background");
+            var dlg = document.getElementById("dlgBookingBox");
+            whitebg.style.display = "block";
+            dlg.style.display = "block";
 
-            var option = document.createElement("option");
-            option.text = "خدمة";
-            selectServMenu.add(option);
-            for(var i =0;i<obj.length;i++){
-                var option = document.createElement("option");
-                var innerOBJ = obj[i];
-                option.text = innerOBJ['service'];
-                selectServMenu.add(option);
+            var winWidth = window.innerWidth;
 
-                var whitebg = document.getElementById("white-background");
-                var dlg = document.getElementById("dlgBookingBox");
-                whitebg.style.display = "block";
-                dlg.style.display = "block";
-
-                var winWidth = window.innerWidth;
-
-                dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
-                dlg.style.top = "150px";
-            }
+            dlg.style.left = (winWidth / 2) - 480 / 2 + "px";
+            dlg.style.top = "150px";
+            // }
         }
     };
     xhttp.open("POST", "SIDDialog.php", true);
     xhttp.send(dataFrom);
 }
+
