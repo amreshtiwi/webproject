@@ -382,35 +382,35 @@ function test_input($data)
     <div class="dlg-body">
         <div class="login-content">
 
-                <div id="emailDiv" class="input-div one focus ">
+                <div id="nameDiv" class="input-div one focus ">
                     <div class="i">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
                         <h5>الإسم</h5>
-                        <input id="emailid" class="input1" type="text" name="email"
+                        <input id="NameId" class="input1" type="text" name="nameDiv"
                             required style="background: none; outline: none; border: none; position: relative; top: -5px;">
                     </div>
                 </div>
 
-                <div id="passDiv" class="input-div two focus">
+                <div id="emailDiv" class="input-div two focus">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
                         <h5 class="mar">البريد الإلكتروني</h5>
-                        <input id="pass" class="input1" type="text" name="pass"
+                        <input id="emalDiv" class="input1" type="text" name="emailDiv"
                                required style="background: none; outline: none; border: none; position: relative;top: -5px;">
                     </div>
                 </div>
 
-                <div id="passDiv" class="input-div two focus">
+                <div id="PhoneDiv" class="input-div two focus">
                     <div class="i">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
                         <h5 class="mar">رقم الهاتف</h5>
-                        <input id="pass" class="input1" type="text" name="pass"
+                        <input id="phonediv" class="input1" type="text" name="phoneDiv"
                                required style="background: none; outline: none; border: none; position: relative;top: -5px;">
                     </div>
                 </div>
