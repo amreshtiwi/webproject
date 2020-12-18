@@ -414,3 +414,25 @@ function getTimes(SID){
 
     //window.location.replace("logIn.php");
 }
+
+function getPrice(SID){
+    var service = document.getElementById('selectServ').value;
+
+    var dataForm = new FormData();
+
+    dataForm.append('service', service);
+    dataForm.append('SID',SID);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("PriceLabel").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "getPrice.php", true);
+    xhttp.send(dataForm);
+
+}
