@@ -149,15 +149,13 @@ if(isset($_POST['logout'])){
         </div>
 
         <div class="dlg-body">
-            <form action="changePass.php" method="post">
-
                 <div id="emailDiv" class="input-div one focus ">
                     <div class="i">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
                         <h5>كلمة المرور القديمه</h5>
-                        <input id="emailid" class="input" type="text">
+                        <input id="oldPass" class="input" type="password">
                     </div>
                 </div>
 
@@ -167,7 +165,7 @@ if(isset($_POST['logout'])){
                     </div>
                     <div>
                         <h5 class="mar">كلمة المرور الجديده</h5>
-                        <input id="pass" class="input" type="password">
+                        <input id="NewPass1" class="input" type="password">
                     </div>
                 </div>
 
@@ -177,17 +175,17 @@ if(isset($_POST['logout'])){
                     </div>
                     <div>
                         <h5 class="mar">إعادة كلمة المرور</h5>
-                        <input id="rpass" class="input" type="password">
+                        <input id="NewPass2" class="input" type="password">
                     </div>
                 </div>
 
-            </form>
         </div>
 
         <div class="dlg-footer">
             <button onclick="dlgOK3()">حسناً</button>
             <button onclick="dlgCancel3()">إلغاء</button>
         </div>
+        <div id="changepassresult"></div>
     </div>
     <!--انتهاء ديالوج تغير كلمة المرور -->
 

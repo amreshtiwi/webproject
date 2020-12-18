@@ -22,16 +22,16 @@ if (isset($_POST['day'], $_POST['service'], $_POST['time'],$_POST['SID'])) {
             ':CID'=>$CID,
             ':SID'=>$SID,
             ':bDate'=>$date,
-            ':BTime'=>"13:00:00",
+            ':BTime'=>$time,
             ':Service'=>$service,
 
         )
     );
 
-    echo '<span style="color: blue">Successfully Booked!</span>';
+    echo '<span style="color: darkred">تم الحجز بنجاح!</span>';
     return;
 }else {
-    echo '<span style="color: blue">fail</span>';
+    echo '<span style="color: darkred">حدث خطأ أثناء تثبيت الحجز. يرجى المحاولة لاحقاً.</span>';
     return;
 }
 

@@ -58,7 +58,7 @@ if (isset($_POST['SID'])) {
         </select>
 
         <label id="testID" for="selectday">أي يوم :</label>
-        <select id="selectday" class="select">
+        <select id="selectday" class="select" onchange="getTimes('<?php echo  $SID ; ?>')">
             <option disabled selected>اليوم</option>
             <?php
             while ($row = $daysResult->fetch(PDO::FETCH_ASSOC)) {

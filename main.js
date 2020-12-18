@@ -147,8 +147,30 @@ function dlgCancel3() {
     dlgHide3();
 }
 
+//change password
 function dlgOK3() {
-    dlgHide3();
+    var oldPass = document.getElementById('oldPass').value;
+    var pass1 = document.getElementById('NewPass1').value;
+    var pass2 = document.getElementById('NewPass2').value;
+    var dataForm = new FormData();
+
+    dataForm.append('oldPass', oldPass);
+    dataForm.append('pass1', pass1);
+    dataForm.append('pass2', pass2);
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("changepassresult").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "changePass.php", true);
+    xhttp.send(dataForm);
+    //dlgHide3();
     //implement code to save data
 }
 
@@ -370,3 +392,25 @@ function showBookingDialog(SID) {
     xhttp.send(dataFrom);
 }
 
+function getTimes(SID){
+    var day = document.getElementById('selectday').value;
+
+    var dataForm = new FormData();
+
+    dataForm.append('day', day);
+    dataForm.append('SID',SID);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("selecttime").innerHTML = this.responseText;
+
+            // dlgBookinghide();
+        }
+    };
+    xhttp.open("POST", "getTime.php", true);
+    xhttp.send(dataForm);
+
+    //window.location.replace("logIn.php");
+}
