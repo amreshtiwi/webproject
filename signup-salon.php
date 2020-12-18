@@ -11,7 +11,16 @@ if ($_GET['click'] == 0) {
     $phone = $_SESSION['phone'];
     $pass1 = $_SESSION['pass1'];
     $pass2 = $_SESSION['pass2'];
-    echo '<script type="text/javascript" src="main3.js"></script>';
+    echo '<script>
+
+        (function () {
+            document.getElementById("fname").classList.add("focus");
+            document.getElementById("emailDiv").classList.add("focus");
+            document.getElementById("phoneNum").classList.add("focus");
+            document.getElementById("passDiv").classList.add("focus");
+            document.getElementById("rrpassDiv").classList.add("focus");
+        })()
+</script>';
 }
 
 ?>
@@ -134,6 +143,7 @@ if ($_GET['click'] == 0) {
         document.getElementById("rrpassDiv").classList.remove('focus');
     })()
 </script>
+
 <script type="text/javascript" src="main.js"></script>
 
 </body>

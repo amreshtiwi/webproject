@@ -24,7 +24,7 @@ $errorMSG = $_SESSION['errorMSGPage3'];
 </head>
 <body>
 <div class="wrap">
-    <div class="backbtn" onclick="goback1">
+    <div class="backbtn" onclick="goback()">
         <a>رجوع</a><span><i class="fas fa-chevron-right"></i></span>
     </div>
     <form action="SignUpSaloonProcess.php" method="post" enctype="multipart/form-data">

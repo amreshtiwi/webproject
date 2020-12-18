@@ -19,3 +19,17 @@ inputs.forEach(input => {
     input.addEventListener("focus", addcl);
     input.addEventListener("blur", remcl);
 });
+
+
+// function required()
+// {
+//     var empt = document.forms["form1"]["FName"].value;
+//     if (empt == "")
+//     {
+//         document.getElementById("fname").classList.remove('focus');
+//     }
+//     else
+//     {
+//         document.getElementById("fname").classList.add('focus');
+//     }
+// }
