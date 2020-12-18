@@ -23,7 +23,7 @@ $page = $row['WebPage'];
 
     <div id="nameDiv1" class="input-div one focus ">
         <div class="i">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-user"></i>
         </div>
         <div>
             <h5>إسم الصالون</h5>
@@ -34,7 +34,7 @@ $page = $row['WebPage'];
 
     <div id="webDiv1" class="input-div one focus ">
         <div class="i">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-globe"></i>
         </div>
         <div>
             <h5>صفحة التواصل الإجتماعي</h5>
@@ -45,7 +45,7 @@ $page = $row['WebPage'];
 
     <div id="emailDiv1" class="input-div two focus">
         <div class="i">
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-envelope"></i>
         </div>
         <div>
             <h5 class="mar">البريد الإلكتروني</h5>
@@ -56,7 +56,7 @@ $page = $row['WebPage'];
 
     <div id="PhoneDiv1" class="input-div two focus">
         <div class="i">
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-mobile"></i>
         </div>
         <div>
             <h5 class="mar">رقم الهاتف</h5>

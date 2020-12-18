@@ -19,7 +19,7 @@ $phone = $row['PhoneNum'];
 
     <div id="emailDiv" class="input-div two focus">
         <div class="i">
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-envelope"></i>
         </div>
         <div>
             <h5 class="mar">البريد الإلكتروني</h5>
@@ -30,7 +30,7 @@ $phone = $row['PhoneNum'];
 
     <div id="PhoneDiv" class="input-div two focus">
         <div class="i">
-            <i class="fas fa-lock"></i>
+            <i class="fas fa-mobile"></i>
         </div>
         <div>
             <h5 class="mar">رقم الهاتف</h5>

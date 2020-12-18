@@ -59,7 +59,7 @@ if ($_GET['click'] == 0) {
             <!-- salon name input-->
             <div id="fname" class="input-div  focus ">
                 <div class="i">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-user"></i>
                 </div>
                 <div>
                     <h5>إسم الصالون</h5>

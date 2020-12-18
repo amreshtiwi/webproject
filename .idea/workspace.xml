@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3606e630-ba28-46a7-bb5a-ae9e019d684b" name="Default Changelist" comment="edit info customer">
-      <change afterPath="$PROJECT_DIR$/editInfoSaloon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getInfoSaloon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer-page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editInfoCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/editInfoCustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ek123232525.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salon-page.php" beforeDir="false" afterPath="$PROJECT_DIR$/salon-page.php" afterDir="false" />
+    <list default="true" id="3606e630-ba28-46a7-bb5a-ae9e019d684b" name="Default Changelist" comment="make the scrol bar">
+      <change beforePath="$PROJECT_DIR$/getInfoCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/getInfoCustomer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getInfoSaloon.php" beforeDir="false" afterPath="$PROJECT_DIR$/getInfoSaloon.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608313377534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="make the scrol bar">
+      <created>1608315524528</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608315524528</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,7 +93,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit info customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit info customer" />
+    <MESSAGE value="make the scrol bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="make the scrol bar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1608314079268">
@@ -109,6 +110,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608300394834" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1608315495920">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608315495920" />
+    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1608315495935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1608315495935" />
     <state x="604" y="336" key="NewPhpFileDialog" timestamp="1608314531765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -117,17 +126,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608308006920" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608313378964">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608315527167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.104.1440.860@0.0.1536.824" timestamp="1608313378964" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608315527167" />
     <state x="569" y="311" key="git4idea.ui.GitStashDialog" timestamp="1608313274071">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="569" y="311" key="git4idea.ui.GitStashDialog/0.0.1536.824/1920.104.1440.860@0.0.1536.824" timestamp="1608313274071" />
-    <state x="548" y="259" key="git4idea.ui.GitUnstashDialog" timestamp="1608313465187">
+    <state x="548" y="259" key="git4idea.ui.GitUnstashDialog" timestamp="1608315496205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="259" key="git4idea.ui.GitUnstashDialog/0.0.1536.824/1920.104.1440.860@0.0.1536.824" timestamp="1608313465187" />
+    <state x="548" y="259" key="git4idea.ui.GitUnstashDialog/0.0.1536.824@0.0.1536.824" timestamp="1608315496205" />
   </component>
 </project>
