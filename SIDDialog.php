@@ -47,7 +47,7 @@ if (isset($_POST['SID'])) {
         <br>
         <br>
         <label for="selectServ">اختر الخدمه المتوفره:</label>
-        <select id="selectServ" class="select">
+        <select id="selectServ" class="select" onchange="getPrice('<?php echo  $SID ; ?>')">
             <option disabled selected>الخدمه</option>
             <?php
             while ($row = $serviceResult->fetch(PDO::FETCH_ASSOC)) {
@@ -74,6 +74,7 @@ if (isset($_POST['SID'])) {
             <option disabled selected>الساعة</option>
         </select>
     </div>
+    <div id="PriceLabel"></div>
 
     <div class="dlg-footer">
         <?php
