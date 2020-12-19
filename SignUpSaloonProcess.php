@@ -758,7 +758,7 @@ function InsertSalTable()
                     $result = $db->query($query);
                 }
                 if ($Days[4] == 1) {
-                    $query = "insert into workhours values('" . $SID . "', 'أريعاء', '" . $start . "','" . $end . "')";
+                    $query = "insert into workhours values('" . $SID . "', 'أربعاء', '" . $start . "','" . $end . "')";
                     $result = $db->query($query);
                 }
                 if ($Days[5] == 1) {
@@ -905,7 +905,7 @@ function InsertSalTable1()
                     $result = $db->query($query);
                 }
                 if ($Days[4] == 1) {
-                    $query = "insert into workhours values('" . $SID . "', 'أريعاء', '" . $start . "','" . $end . "')";
+                    $query = "insert into workhours values('" . $SID . "', 'أربعاء', '" . $start . "','" . $end . "')";
                     $result = $db->query($query);
                 }
                 if ($Days[5] == 1) {

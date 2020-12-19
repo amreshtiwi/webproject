@@ -45,7 +45,7 @@ function parseDay($english)
         case "tuesday":
             return "ثلاثاء";
         case "wednesday":
-            return "أريعاء";
+            return "أربعاء";
         case "thursday":
             return "خميس";
         case  "friday":

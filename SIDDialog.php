@@ -99,7 +99,7 @@ function parseDay($Arabic)
             return "monday";
         case "ثلاثاء":
             return "tuesday";
-        case "أريعاء":
+        case "أربعاء":
             return "wednesday";
         case "خميس":
             return "thursday";
