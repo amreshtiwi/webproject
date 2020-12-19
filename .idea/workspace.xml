@@ -19,9 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3606e630-ba28-46a7-bb5a-ae9e019d684b" name="Default Changelist" comment="make the scrol bar">
+    <list default="true" id="3606e630-ba28-46a7-bb5a-ae9e019d684b" name="Default Changelist" comment="fixed table style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/style3.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicePricesFemale.php" beforeDir="false" afterPath="$PROJECT_DIR$/ServicePricesFemale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServicesPricesMale.php" beforeDir="false" afterPath="$PROJECT_DIR$/ServicesPricesMale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/logIn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/resetPassword.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +61,7 @@
       <updated>1608300103936</updated>
       <workItem from="1608300105540" duration="7524000" />
       <workItem from="1608312308771" duration="749000" />
+      <workItem from="1608374037708" duration="1862000" />
     </task>
     <task id="LOCAL-00001" summary="edit info customer">
       <created>1608313377534</created>
@@ -73,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608315524528</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed table style">
+      <created>1608320128356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608320128356</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,7 +105,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit info customer" />
     <MESSAGE value="make the scrol bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="make the scrol bar" />
+    <MESSAGE value="fixed table style" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed table style" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1608314079268">
@@ -126,10 +138,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608308006920" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608315527167">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608320129741">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.104.1440.860@0.0.1536.824" timestamp="1608313378964" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.104.1440.860@0.0.1536.824" timestamp="1608320129741" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608315527167" />
     <state x="569" y="311" key="git4idea.ui.GitStashDialog" timestamp="1608313274071">
       <screen x="0" y="0" width="1536" height="824" />

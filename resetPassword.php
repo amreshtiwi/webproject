@@ -48,6 +48,9 @@ if (isset($_POST["email"]) && isset($_POST["action"]) &&
         } else {
             $res3 = $db->query("update saloon set Password ='" . sha1($pass1) . "' where Email = '" . $email . "'");
         }
+        $key = $_GET["key"];
+        $query = $db->prepare("delete from password_reset_temp where Vkey=?");
+        $query->execute([$key]);
         echo "<script>alert('تم تغيير كلمة المرور. سيتم تحويلك للصفحة الرئيسية.')</script>";
         echo '<script> window.location.href = "index.php"; </script>';
     }

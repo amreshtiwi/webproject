@@ -2,8 +2,12 @@
 session_start();
 $email = $_SESSION['LoginEmail'];
 $password1 = $_SESSION['LoginPassword1'];
-if($email != "" || $password1 != ""){
-    echo '<script src="main3.js"></script>';
+if ($email != "" || $password1 != "") {
+    echo "<script>
+    function(){
+    document.getElementById('emailDiv').classList.add('focus');
+    document.getElementById('passDiv').classList.add('focus');
+</script>";
 }
 $showError = $_SESSION['LoginShowMsg'];
 $errorMSG = $_SESSION['LoginErrorMsg'];
@@ -128,9 +132,9 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
     </div>
 </div>
 <script>
-    (function(){
-    document.getElementById("emailDiv").classList.remove('focus');
-    document.getElementById("passDiv").classList.remove('focus');
+    (function () {
+        document.getElementById("emailDiv").classList.remove('focus');
+        document.getElementById("passDiv").classList.remove('focus');
     })()
 </script>
 <script type="text/javascript" src="main.js"></script>
